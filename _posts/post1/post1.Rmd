@@ -1,0 +1,236 @@
+---
+title: "COVID-19 in Iraq"
+description: |
+  This post will analyze the development of the corona virus in the Iraq!
+author:
+  - name: Putu Wahyu Saputra 
+    email: psap0002@student.monash.edu
+date: 08-28-2020
+output:
+  distill::distill_article:
+    self_contained: false
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(lubridate)
+library(coronavirus)
+library(DT)
+library(htmltools)
+library(plotly)
+library(tidycovid19)
+library(ggrepel)
+library(gghighlight)
+library(zoo)
+library(gt)
+# update_dataset()
+```
+
+```{r}
+#load coronavirus dataset
+data("coronavirus")
+iraq <- coronavirus %>% 
+  filter(country=="Iraq") %>%
+  select(-province)
+
+# load tidycovid19 dataset
+covid <- download_merged_data(silent = TRUE, cached = TRUE)
+covid <- covid %>%
+  filter(date <= "2020-08-31")
+```
+
+```{r,include = FALSE}
+variables_1 <- iraq %>% names()
+class_1 <- sapply(iraq, class)
+desc_1 <- c("The date of the summary","The province or state, when applicable","Latitude point","Longitude point","the type of case (i.e., confirmed, death)","the number of daily cases (corresponding to the case type")
+```
+
+# Dataset
+
+This `coronavirus` dataset has the following fields as seen in Table \@ref(tab:corona-tab-vr). @kableExtra The dataset is obtained from `coronavirus` package in CRAN. @corona 
+
+```{r corona-tab-vr, echo=FALSE}
+tibble(variables_1,class_1,desc_1) %>%
+  kable(col.names = c("variable","class","description"),
+        caption ="Coronavirus dataset variables") %>%
+  kable_styling(bootstrap_options = "hover")
+```
+
+To make comparisons, the dataset from `tidycovid19` is also used in this report. @tidycovid19 This dataset has more variables because it is a combination of several other dataset sources. The variable from `tidycovid19` listed below in Table 2. For this analysis, we only use the `confirmed`, `deaths` and `recovered` which contain cumulative number of cases.
+
+```{r}
+class_type <- sapply(covid, class)
+
+tidycovid19_variable_definitions %>%
+   mutate(class = class_type) %>%
+  select(var_name, class, var_def) %>%
+  rename(variable = var_name, description = var_def) %>%
+  datatable(class = 'cell-border stripe',
+          rownames = FALSE,
+          filter = 'top',
+          selection="multiple",
+          escape=FALSE,
+          options = list(pageLength = 5, sDom  = '<"top">lrt<"bottom">ip'),
+          caption = tags$caption(style = 'caption-side: bottom; text-align: center;','Table 2: ',
+                    em('tidycovid19 dataset variables.')))
+```
+
+
+# Daily Cases
+
+Based on a report from Anadolu Agency @karaalp_iraq_2020 the first case in Iraq occurred on 24 February. After that the second case was reported two days later with a jump of 4 cases at once. Entering March, daily cases tended to fluctuate. However, the cumulative cases increased significantly. The first case of death due to Covid-19 was reported on March 4, as many as 2 cases. Until the last data is obtained on the date `r max(covid$date[covid$country=="Iraq"])` a total of `r max (covid $ confirmed [covid $ country ==" Iraq "])` positive cases, `r max (covid $ deaths [covid $ country ==" Iraq "])` died, and `r max ( covid $ recovered [covid $ country == "Iraq"]) `declared cured.
+
+To see the development of daily cases in Iraq, we can check the data from Table 3 below. It contains the data of daily cases from 22 January 2020 until 31 August 2020.
+
+```{r, echo=FALSE}
+# a custom table container
+sketch = htmltools::withTags(table(
+  class = 'display',
+  thead(
+    tr(
+      th(rowspan = 2, 'Date'),
+      th(colspan = 3, 'Cases')
+    ),
+    tr(
+      lapply(rep(c('Confirmed', 'Death', 'Recovered'), 1), th)
+    )
+  )
+))
+
+iraq %>%
+  select(date, type, cases) %>%
+  pivot_wider(names_from = type, values_from = cases) %>%
+datatable(class = 'cell-border stripe',
+          container = sketch,
+          rownames = FALSE,
+          filter = 'top',
+          selection="multiple",
+          escape=FALSE,
+          options = list(pageLength = 10, sDom  = '<"top">lrt<"bottom">ip'),
+          caption = tags$caption(style = 'caption-side: bottom; text-align: center;','Table 3: ',
+                    em('Daily cases in Iraq.')))
+```
+
+```{r, echo=FALSE}
+plot<-iraq %>%
+  ggplot(aes(x=date,
+             y=cases,
+             color=type)) +
+  geom_line() +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  ggtitle("Daily cases in Iraq")
+
+
+  ggplotly(plot) %>%
+    layout(legend = list(orientation = "h", x = 0.3, y = -0.2)) %>%
+    config(displayModeBar = FALSE)
+```
+
+# Cumulative Cases
+
+This section shows a Table with cumulative case developments with the same date ranges.
+Figure @\ref(fig:plot-cumulative) is provided as a visualisation from Table 4.
+
+```{r}
+# a custom table container
+sketch2 = htmltools::withTags(table(
+  class = 'display',
+  thead(
+    tr(
+      th(colspan = 2, 'Date'),
+      th(colspan = 3, 'Cases')
+    ),
+    tr(
+      lapply(rep(c('Month','Day','Confirmed', 'Death', 'Recovered'), 1), th)
+    )
+  )
+))
+
+covid %>%
+  filter(country=="Iraq") %>%
+  mutate(month = month(date, abbr = FALSE, label = TRUE),
+         day = mday(date)) %>%
+  select(month, day, confirmed, deaths, recovered) %>%
+  datatable(container=sketch2,
+          rownames = FALSE,
+          filter = 'top',
+          selection="multiple",
+          escape=FALSE,
+          options = list(pageLength = 5, sDom  = '<"top">lrt<"bottom">ip'),
+          caption = tags$caption(style = 'caption-side: bottom; text-align: center;','Table 4: ',
+                    em('Cumulative Cases in Iraq.')))
+  
+```
+
+
+```{r plot-cumulative, fig.cap="The cummulative cases in Iraq"}
+iraq_cumulative <- covid %>%
+  filter(country=="Iraq") %>%
+   ggplot() +
+  geom_line(aes(x=date, y=confirmed, color="Confirmed")) +
+  geom_line(aes(x=date, y=deaths, color= "Deaths")) +
+  geom_line(aes(x=date, y=recovered, color= "Recovered")) +
+  theme_minimal() +
+  theme(legend.position = "right") +
+  ylab("cases") +
+  ggtitle("Cummulative cases in Iraq")
+
+ggplotly(iraq_cumulative) %>%
+  layout(legend = list(orientation = "h", x = 0.3, y = -0.2)) %>%
+  config(displayModeBar = FALSE)
+```
+
+
+# Summary Table
+
+To provide summary statistics, data can be seen in Table 5. The table is created with the `gt` package. @gt The table below shows the number of each case per month. At the bottom there are statistical values that state the total, average cases per month, and median value of each case.
+
+```{r, echo=FALSE}
+summary <- iraq %>%
+  pivot_wider(names_from = type, values_from = cases) %>%
+  mutate(month = month(date, abbr = FALSE, label = TRUE),
+         day = mday(date)) %>%
+  select(month, confirmed, death, recovered) %>%
+  group_by(month) %>%
+  summarise(confirmed = sum(confirmed),
+            death = sum(death),
+            recovered = sum(recovered))
+
+summary %>%
+  gt() %>%
+  summary_rows(
+  groups = NULL,
+  columns = vars(confirmed,death,recovered),
+  fns=list(total = ~sum(.),
+           avgpermonth = ~mean(.),
+           median = ~median(.)),
+  formatter = fmt_number,
+  decimals = 0,
+  use_seps = FALSE
+) %>%
+  tab_header(
+    title = md("**Total Coronavirus cases in Iraq**"),
+    subtitle = "Data start from January - August") %>%
+   tab_source_note(
+    source_note = "Source: The 2019 Novel Coronavirus COVID-19 (2019-nCoV) Dataset.") %>%
+  tab_source_note(
+    source_note = md("Reference: Krispin, R. and Byrnes, J., (2020)")
+  )
+  
+
+```
+
+
+
+
+
+

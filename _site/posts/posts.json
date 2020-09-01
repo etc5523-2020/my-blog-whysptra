@@ -1,0 +1,34 @@
+[
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to My ETC5523 Blog",
+    "description": "Welcome to ETC5523 Blog. I hope you enjoy \nreading the content that provided!",
+    "author": [
+      {
+        "name": "Putu Wahyu Saputra",
+        "url": "psap0002@student.monash.edu"
+      }
+    ],
+    "date": "2020-08-28",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2020-08-28T12:35:24+10:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/post1/",
+    "title": "COVID-19 in Iraq",
+    "description": "This post will analyze the development of the corona virus in the Iraq!",
+    "author": [
+      {
+        "name": "Putu Wahyu Saputra",
+        "url": {}
+      }
+    ],
+    "date": "2020-08-28",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2020-09-01T22:54:04+10:00",
+    "input_file": "post1.utf8.md"
+  }
+]

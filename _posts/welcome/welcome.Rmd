@@ -1,0 +1,20 @@
+---
+title: "Welcome to My ETC5523 Blog"
+description: |
+  Welcome to ETC5523 Blog. I hope you enjoy 
+  reading the content that provided!
+author:
+  - name: Putu Wahyu Saputra 
+    url: psap0002@student.monash.edu
+date: 08-28-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+

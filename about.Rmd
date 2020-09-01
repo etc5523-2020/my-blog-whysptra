@@ -1,0 +1,14 @@
+---
+title: "About this blog"
+description: |
+  Hello, welcome to my blog
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+My name is Putu Wahyu Saputra. Currently, I am a Master of Business Analytics student at Monash University.
+This blog was created for the purposes of fulfilling the assignment of the ETC5523 Communicating With Data.
+There will be lots of interesting information related to data analysis and visualization.
+Enjoy !
