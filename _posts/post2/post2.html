@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+  <title>COVID-19 in Saudi Arabia</title>
+  
+  <meta property="description" itemprop="description" content="The coronavirus hit the Kingdom of Saudi Arabia&#10;When was the first cases? How it affect the Middle East country?"/>
+  
+  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2020-09-14"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-09-14"/>
+  <meta name="article:author" content="Putu Wahyu Saputra"/>
+  
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="COVID-19 in Saudi Arabia"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="The coronavirus hit the Kingdom of Saudi Arabia&#10;When was the first cases? How it affect the Middle East country?"/>
+  <meta property="og:locale" content="en_US"/>
+  
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="COVID-19 in Saudi Arabia"/>
+  <meta property="twitter:description" content="The coronavirus hit the Kingdom of Saudi Arabia&#10;When was the first cases? How it affect the Middle East country?"/>
+  
+  <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Coronavirus: The 2019 novel coronavirus covid-19 (2019-nCoV) dataset;citation_publication_date=2020;citation_author=Rami Krispin;citation_author=Jarrett Byrnes"/>
+  <meta name="citation_reference" content="citation_title=Tidycovid19: Download, tidy and visualize covid-19 related data;citation_publication_date=2020;citation_author=Joachim Gassen"/>
+  <meta name="citation_reference" content="citation_title=KableExtra: Construct complex table with â€™kableâ€™ and pipe syntax;citation_publication_date=2019;citation_author=Hao Zhu"/>
+  <meta name="citation_reference" content="citation_title=Distill: â€™R markdownâ€™ format for scientific and technical writing;citation_publication_date=2020;citation_author=JJ Allaire;citation_author=Rich Iannone;citation_author=Yihui Xie"/>
+  <meta name="citation_reference" content="citation_title=Welcome to the &lt;span class=&quot;nocase&quot;&gt;tidyverse&lt;/span&gt;;citation_publication_date=2019;citation_volume=4;citation_doi=10.21105/joss.01686;citation_author=Hadley Wickham;citation_author=Mara Averick;citation_author=Jennifer Bryan;citation_author=Winston Chang;citation_author=Lucy Dâ€™Agostino McGowan;citation_author=Romain FranÃ§ois;citation_author=Garrett Grolemund;citation_author=Alex Hayes;citation_author=Lionel Henry;citation_author=Jim Hester;citation_author=Max Kuhn;citation_author=Thomas Lin Pedersen;citation_author=Evan Miller;citation_author=Stephan Milton Bache;citation_author=Kirill MÃ¼ller;citation_author=Jeroen Ooms;citation_author=David Robinson;citation_author=Dana Paige Seidel;citation_author=Vitalie Spinu;citation_author=Kohske Takahashi;citation_author=Davis Vaughan;citation_author=Claus Wilke;citation_author=Kara Woo;citation_author=Hiroaki Yutani"/>
+  <meta name="citation_reference" content="citation_title=Ggplot2: Elegant graphics for data analysis;citation_publication_date=2016;citation_publisher=Springer-Verlag New York;citation_author=Hadley Wickham"/>
+  <meta name="citation_reference" content="citation_title=Knitr: A general-purpose package for dynamic report generation in r;citation_publication_date=2020;citation_author=Yihui Xie"/>
+  <meta name="citation_reference" content="citation_title=Dates and times made easy with &lt;span class=&quot;nocase&quot;&gt;lubridate&lt;/span&gt;;citation_publication_date=2011;citation_volume=40;citation_author=Garrett Grolemund;citation_author=Hadley Wickham"/>
+  <meta name="citation_reference" content="citation_title=DT: A wrapper of the javascript library â€™datatablesâ€™;citation_publication_date=2020;citation_author=Yihui Xie;citation_author=Joe Cheng;citation_author=Xianying Tan"/>
+  <meta name="citation_reference" content="citation_title=Htmltools: Tools for html;citation_publication_date=2020;citation_author=Joe Cheng;citation_author=Carson Sievert;citation_author=Winston Chang;citation_author=Yihui Xie;citation_author=Jeff Allen"/>
+  <meta name="citation_reference" content="citation_title=Interactive web-based data visualization with r, plotly, and shiny;citation_publication_date=2020;citation_publisher=Chapman; Hall/CRC;citation_author=Carson Sievert"/>
+  <meta name="citation_reference" content="citation_title=Gt: Easily create presentation-ready display tables;citation_publication_date=2020;citation_author=Richard Iannone;citation_author=Joe Cheng;citation_author=Barret Schloerke"/>
+  <!--radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["COVID-19 in Saudi Arabia"]},{"type":"character","attributes":{},"value":["The coronavirus hit the Kingdom of Saudi Arabia\nWhen was the first cases? How it affect the Middle East country?\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","email"]}},"value":[{"type":"character","attributes":{},"value":["Putu Wahyu Saputra"]},{"type":"character","attributes":{},"value":["psap0002@student.monash.edu"]}]}]},{"type":"character","attributes":{},"value":["09-14-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["references.bib"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["daily-tests-per-thousand-people-smoothed-7-day.csv","domestic-and-foreign-pilgrims.csv","post2_files/bowser-1.9.3/bowser.min.js","post2_files/crosstalk-1.1.0.1/css/crosstalk.css","post2_files/crosstalk-1.1.0.1/js/crosstalk.js","post2_files/crosstalk-1.1.0.1/js/crosstalk.js.map","post2_files/crosstalk-1.1.0.1/js/crosstalk.min.js","post2_files/crosstalk-1.1.0.1/js/crosstalk.min.js.map","post2_files/distill-2.2.21/template.v2.js","post2_files/figure-html5/test-1000-2.png","post2_files/figure-html5/total-test-1.png","post2_files/figure-html5/unnamed-chunk-4-1.png","post2_files/figure-html5/unnamed-chunk-4-2.png","post2_files/figure-html5/unnamed-chunk-5-1.png","post2_files/figure-html5/unnamed-chunk-6-1.png","post2_files/figure-html5/unnamed-chunk-7-1.png","post2_files/figure-html5/unnamed-chunk-8-1.png","post2_files/htmlwidgets-1.5.1/htmlwidgets.js","post2_files/jquery-1.11.3/jquery-AUTHORS.txt","post2_files/jquery-1.11.3/jquery.js","post2_files/jquery-1.11.3/jquery.min.js","post2_files/jquery-1.11.3/jquery.min.map","post2_files/kePrint-0.0.1/kePrint.js","post2_files/lightable-0.0.1/lightable.css","post2_files/plotly-binding-4.9.2.1/plotly.js","post2_files/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css","post2_files/plotly-main-1.52.2/plotly-latest.min.js","post2_files/typedarray-0.1/typedarray.min.js","post2_files/webcomponents-2.0.0/webcomponents.js","references.bib"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+  
+  <style type="text/css">
+  
+  body {
+    background-color: white;
+  }
+  
+  .pandoc-table {
+    width: 100%;
+  }
+  
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+  
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+  
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+  
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+  
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+  
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+  
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .shaded-content {
+    background: white;
+  }
+  
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  d-article {
+    padding-bottom: 30px;
+  }
+  
+  d-appendix {
+    padding-top: 30px;
+  }
+  
+  d-article>p>img {
+    width: 100%;
+  }
+  
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for table of contents */
+  
+  .d-toc {
+    color: rgba(0,0,0,0.8);
+    font-size: 0.8em;
+    line-height: 1em;
+  }
+  
+  .d-toc-header {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1.3em;
+  }
+  
+  .d-toc a {
+    border-bottom: none;
+  }
+  
+  .d-toc ul {
+    padding-left: 0;
+  }
+  
+  .d-toc li>ul {
+    padding-top: 0.8em;
+    padding-left: 16px;
+    margin-bottom: 0.6em;
+  }
+  
+  .d-toc ul,
+  .d-toc li {
+    list-style-type: none;
+  }
+  
+  .d-toc li {
+    margin-bottom: 0.9em;
+  }
+  
+  .d-toc-separator {
+    margin-top: 20px;
+    margin-bottom: 2em;
+  }
+  
+  .d-article-with-toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  
+  
+  /* Tweak code blocks (note that this CSS is repeated above in an injection
+     into the d-code shadow dom) */
+  
+  d-code {
+    overflow-x: auto !important;
+  }
+  
+  pre.d-code code.d-code {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  pre.text-output {
+  
+    font-size: 12px;
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  @media(min-width: 768px) {
+  
+  d-code {
+    overflow-x: visible !important;
+  }
+  
+  pre.d-code code.d-code  {
+      padding-left: 18px;
+      font-size: 14px;
+  }
+  pre.text-output {
+    font-size: 14px;
+  }
+  }
+  
+  /* Figure */
+  
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+  
+  .figure img {
+    width: 100%;
+  }
+  
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+  
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+  
+  
+  
+  /* Tweak 1000px media break to show more text */
+  
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+  
+    .grid {
+      grid-column-gap: 16px;
+    }
+  
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+  
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+  
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+  
+  
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+  
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  
+  /* Social footer */
+  
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+  
+  .disqus-comments {
+    margin-right: 30px;
+  }
+  
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  
+  #disqus_thread {
+    margin-top: 30px;
+  }
+  
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+  
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+  
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+  
+  
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+  
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+  
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+  
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+  
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+  
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+  
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+  
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  </style>
+  
+  <script type="application/javascript">
+  
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+  
+  // show body when load is complete
+  function on_load_complete() {
+  
+    // set body to visible
+    document.body.style.visibility = 'visible';
+  
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+  
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+  
+  function init_distill() {
+  
+    init_common();
+  
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+  
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+  
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+  
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+  
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+  
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+  
+    // create d-bibliography
+    var bibliography = $('<d-bibliography></d-bibliography>');
+    $('#distill-bibliography').wrap(bibliography);
+  
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+  
+    // replace citations with <d-cite>
+    $('.citation').each(function(i, val) {
+      appendix = true;
+      var cites = $(this).attr('data-cites').split(" ");
+      var dt_cite = $('<d-cite></d-cite>');
+      dt_cite.attr('key', cites.join());
+      $(this).replaceWith(dt_cite);
+    });
+    // remove refs
+    $('#refs').remove();
+  
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+  
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+  
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+  
+    // replace code blocks with d-code
+    $('pre>code').each(function(i, val) {
+      var code = $(this);
+      var pre = code.parent();
+      var clz = "";
+      var language = pre.attr('class');
+      if (language) {
+        // map unknown languages to "clike" (without this they just dissapear)
+        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                                 "javascript", "js", "julia", "lua", "markdown",
+                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
+          language = "clike";
+        language = ' language="' + language + '"';
+        var dt_code = $('<d-code block' + language + clz + '></d-code>');
+        dt_code.text(code.text());
+        pre.replaceWith(dt_code);
+      } else {
+        code.addClass('text-output').unwrap().changeElementType('pre');
+      }
+    });
+  
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+  
+      // capture layout
+      var layout = $(this).attr('data-layout');
+  
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('d-code, pre.text-output, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+  
+  
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+  
+    // load distill framework
+    load_distill_framework();
+  
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+  
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+  
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+  
+      // table of contents
+      if (have_authors) // adjust border if we are in authors
+        $('.d-toc').parent().addClass('d-article-with-toc');
+  
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+  
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+  
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+  
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+  
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+  
+      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+      $('d-code').each(function(i, val) {
+        var style = document.createElement('style');
+        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+        if (this.shadowRoot)
+          this.shadowRoot.appendChild(style);
+      });
+  
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+  
+      // clear polling timer
+      clearInterval(tid);
+  
+      // show body now that everything is ready
+      on_load_complete();
+    }
+  
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+  
+  }
+  
+  function init_downlevel() {
+  
+    init_common();
+  
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+  
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+  
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+  
+    // remove toc
+    $('.d-toc-header').remove();
+    $('.d-toc').remove();
+    $('.d-toc-separator').remove();
+  
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+  
+  
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+  
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+  
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+  
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+  
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+  
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+  
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+  
+    $('body').addClass('downlevel');
+  
+    on_load_complete();
+  }
+  
+  
+  function init_common() {
+  
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+  
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+  
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+  
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+  
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+  
+      }
+    });
+  
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+  
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+  
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+  
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+  
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+  
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+  
+  </script>
+  
+  <!--/radix_placeholder_distill-->
+  <script src="post2_files/kePrint-0.0.1/kePrint.js"></script>
+  <link href="post2_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+  <script src="post2_files/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+  <script src="post2_files/plotly-binding-4.9.2.1/plotly.js"></script>
+  <script src="post2_files/typedarray-0.1/typedarray.min.js"></script>
+  <script src="post2_files/jquery-1.11.3/jquery.min.js"></script>
+  <link href="post2_files/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="post2_files/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+  <link href="post2_files/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="post2_files/plotly-main-1.52.2/plotly-latest.min.js"></script>
+  <script src="post2_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="post2_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="post2_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"COVID-19 in Saudi Arabia","description":"The coronavirus hit the Kingdom of Saudi Arabia\nWhen was the first cases? How it affect the Middle East country?","authors":[{"author":"Putu Wahyu Saputra","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-09-14T00:00:00.000+10:00","citationText":"Saputra, 2020"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>COVID-19 in Saudi Arabia</h1>
+<p><p>The coronavirus hit the Kingdom of Saudi Arabia When was the first cases? How it affect the Middle East country?</p></p>
+</div>
+
+<div class="d-byline">
+  Putu Wahyu Saputra  
+  
+<br/>09-14-2020
+</div>
+
+<div class="d-article">
+<h2 id="dataset">Dataset</h2>
+<p>This <code>coronavirus</code> dataset has the following variables as seen in Table <a href="#tab:corona-tab-vr">1</a>. The dataset is obtained from <code>coronavirus</code> package in CRAN. <span class="citation" data-cites="corona">Krispin and Byrnes (<a href="#ref-corona" role="doc-biblioref">2020</a>)</span></p>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:corona-tab-vr">Table 1: </span>Coronavirus dataset variables
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+variable
+</th>
+<th style="text-align:left;">
+class
+</th>
+<th style="text-align:left;">
+description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+date
+</td>
+<td style="text-align:left;">
+Date
+</td>
+<td style="text-align:left;">
+The date of the summary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+country
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+The province or state, when applicable
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lat
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Latitude point
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+long
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Longitude point
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+type
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+the type of case (i.e., confirmed, death)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cases
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+the number of daily cases (corresponding to the case type
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>To make comparisons, the package from <code>tidycovid19</code> is also used in this report. <span class="citation" data-cites="tidycovid19">Gassen (<a href="#ref-tidycovid19" role="doc-biblioref">2020</a>)</span> This package has more variables because it is a combination of several other dataset sources, including the Our World in Data. The dataset contains a tidy format of the testing data over time. The variables from Our World in Data listed below in Table <a href="#tab:tidycovid-tbl">2</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tidycovid-tbl">Table 2: </span>Our World dataset variables
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+variable
+</th>
+<th style="text-align:left;">
+class
+</th>
+<th style="text-align:left;">
+description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+iso3c
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Country code
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+date
+</td>
+<td style="text-align:left;">
+Date
+</td>
+<td style="text-align:left;">
+The date of the summary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+total_tests
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Accumulated test counts
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tests_units
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Definition of what constitutes a ‘test’
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+timestamp
+</td>
+<td style="text-align:left;">
+POSIXct, POSIXt
+</td>
+<td style="text-align:left;">
+The date and time of the summary
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="when-was-the-first-cases-and-how-the-trend-overtime">When was the first cases and how the trend overtime ?</h2>
+<p>AA reported, the first case of coronavirus in Saudi Arabia occurred on March 2, 2020, where a citizen was allegedly coming from Iran via Bahrain. <span class="citation" data-cites="anodolu">(<span class="citeproc-not-found" data-reference-id="anodolu"><strong>???</strong></span>)</span> In the following three days, the second case was reported as many as 4 cases at once. In less than two weeks since the first reported case, the total number of cases has increased by almost six times higher. This trend continued to increase daily, reaching a peak on May 16 with daily cases of 2870. After that cases started to decline for almost two weeks recording 1581 cases a day on May 29. Cases have risen sharply since then, hitting a record high of 4919 cases per day on June 17. After reaching the peak, the curve trend began to decline, although it fluctuated at the beginning of July. From the latest data collected on September 9, cases per day have reached 708 cases per day.</p>
+<p>We provide a plot showing the fatality trend in Saudi Arabia in Figure xx. The first reported death cases caused by the coronavirus occurred 20 days after the first case was reported where the victim was a 51-year-old Afghan resident <span class="citation" data-cites="aljazeera">(<span class="citeproc-not-found" data-reference-id="aljazeera"><strong>???</strong></span>)</span> Trend fatality increased after that to reach a peak of 58 deaths a day on July 5. After that, the trend of mortality began to decline even though it was fluctuating.</p>
+<p>Apart from positive cases and deaths, Saudi Arabia is showing an increasing trend in patient recovery. The trend increased from the end of April and had decreased in June. Patient recovery per day tends to increase despite the fluctuation and peaked on July 14. On that date, 7718 people were recorded as recovered from the coronavirus. As the number of positive cases decreased, the number of recovered patients also decreased.AA reported, the first case of coronavirus in Saudi Arabia occurred on March 2, 2020, where a citizen was allegedly coming from Iran via Bahrain. <span class="citation" data-cites="anodolu">(<span class="citeproc-not-found" data-reference-id="anodolu"><strong>???</strong></span>)</span> In the following three days, the second case was reported as many as 4 cases at once. In less than two weeks since the first reported case, the total number of cases has increased by almost six times higher. This trend continued to increase daily, reaching a peak on May 16 with daily cases of 2870. After that cases started to decline for almost two weeks recording 1581 cases a day on May 29. Cases have risen sharply since then, hitting a record high of 4919 cases per day on June 17. After reaching the peak, the curve trend began to decline, although it fluctuated at the beginning of July. From the latest data collected on September 9, cases per day have reached 708 cases per day.</p>
+<p>We provide a plot showing the fatality trend in Saudi Arabia in Figure xx. The first reported death cases caused by the coronavirus occurred 20 days after the first case was reported where the victim was a 51-year-old Afghan resident <span class="citation" data-cites="aljazeera">(<span class="citeproc-not-found" data-reference-id="aljazeera"><strong>???</strong></span>)</span> Trend fatality increased after that to reach a peak of 58 deaths a day on July 5. After that, the trend of mortality began to decline even though it was fluctuating.</p>
+<p>Apart from positive cases and deaths, Saudi Arabia is showing an increasing trend in patient recovery. The trend increased from the end of April and had decreased in June. Patient recovery per day tends to increase despite the fluctuation and peaked on July 14. On that date, 7718 people were recorded as recovered from the coronavirus. As the number of positive cases decreased, the number of recovered patients also decreased.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:daily-cases"></span>
+<div id="htmlwidget-921e46ec0af50d327f45" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-921e46ec0af50d327f45">{"x":{"data":[{"x":[18395,18396,18397,18398,18399,18400,18401,18402,18403,18404,18405,18406,18407,18408,18409,18410,18411,18412,18413,18414,18415,18416,18417,18418,18419,18420,18421,18422,18423,18424,18425,18426,18427,18428,18429,18430,18431,18432,18433,18434,18435,18436,18437,18438,18439,18440,18441,18442,18443,18444,18445,18446,18447,18448,18449,18450,18451,18452,18453,18454,18455,18456,18457,18458,18459,18460,18461,18462,18463,18464,18465,18466,18467,18468,18469,18470,18471,18472,18473,18474,18475,18476,18477,18478,18479,18480,18481,18482,18483,18484,18485,18486,18487,18488,18489,18490,18491,18492,18493,18494,18495,18496,18497,18498,18499,18500,18501,18502,18503,18504,18505,18506,18507,18508,18509,18510,18511,18512,18513,18514,18515,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"y":[1905,2039,2307,2840,2736,2593,2509,2691,2532,2642,2442,2399,2235,1931,1815,1644,1581,1618,1877,1881,1869,2171,1975,2591,3121,3045,3369,3288,3717,3733,3921,3366,4233,4507,4267,4919,4757,4301,3941,3379,3393,3139,3123,3372,3938,3927,3989,3943,4387,3402,3383,4193,4128,3580,4207,3392,3036,3183,3159,2994,2779,2852,2692,2671,2764,2613,2565,2504,2429,2476,2331,2238,2378,2201,1968,1993,1897,1759,1629,1686,1573,1357,1258,1363,1368,1402,1567,1469,1428,1257,1521,1569,1482,1383,1413,1227,1372,1409,1363,1287,1213,1184,1109,1175,1114,1068,1019,1069,987,910,951,898,816,833,822,791,756,768,781,775,708,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,4,0,0,6,4,5,1,24,41,17,0,15,53,0,103,70,48,119,51,205,133,112,92,99,96,154,110,157,165,154,140,223,203,190,137,355,364,382,429,472,435,493,518,762,1132,1088,1122,1147,1141,1158,1172,1197,1223,1289,1266,1325,1351,1344,1362,1552,1645,1595,1687,1793,1701,1704,1912,1966,1911],"text":["date: 2020-05-13<br />cases: 1905<br />type: confirmed","date: 2020-05-14<br />cases: 2039<br />type: confirmed","date: 2020-05-15<br />cases: 2307<br />type: confirmed","date: 2020-05-16<br />cases: 2840<br />type: confirmed","date: 2020-05-17<br />cases: 2736<br />type: confirmed","date: 2020-05-18<br />cases: 2593<br />type: confirmed","date: 2020-05-19<br />cases: 2509<br />type: confirmed","date: 2020-05-20<br />cases: 2691<br />type: confirmed","date: 2020-05-21<br />cases: 2532<br />type: confirmed","date: 2020-05-22<br />cases: 2642<br />type: confirmed","date: 2020-05-23<br />cases: 2442<br />type: confirmed","date: 2020-05-24<br />cases: 2399<br />type: confirmed","date: 2020-05-25<br />cases: 2235<br />type: confirmed","date: 2020-05-26<br />cases: 1931<br />type: confirmed","date: 2020-05-27<br />cases: 1815<br />type: confirmed","date: 2020-05-28<br />cases: 1644<br />type: confirmed","date: 2020-05-29<br />cases: 1581<br />type: confirmed","date: 2020-05-30<br />cases: 1618<br />type: confirmed","date: 2020-05-31<br />cases: 1877<br />type: confirmed","date: 2020-06-01<br />cases: 1881<br />type: confirmed","date: 2020-06-02<br />cases: 1869<br />type: confirmed","date: 2020-06-03<br />cases: 2171<br />type: confirmed","date: 2020-06-04<br />cases: 1975<br />type: confirmed","date: 2020-06-05<br />cases: 2591<br />type: confirmed","date: 2020-06-06<br />cases: 3121<br />type: confirmed","date: 2020-06-07<br />cases: 3045<br />type: confirmed","date: 2020-06-08<br />cases: 3369<br />type: confirmed","date: 2020-06-09<br />cases: 3288<br />type: confirmed","date: 2020-06-10<br />cases: 3717<br />type: confirmed","date: 2020-06-11<br />cases: 3733<br />type: confirmed","date: 2020-06-12<br />cases: 3921<br />type: confirmed","date: 2020-06-13<br />cases: 3366<br />type: confirmed","date: 2020-06-14<br />cases: 4233<br />type: confirmed","date: 2020-06-15<br />cases: 4507<br />type: confirmed","date: 2020-06-16<br />cases: 4267<br />type: confirmed","date: 2020-06-17<br />cases: 4919<br />type: confirmed","date: 2020-06-18<br />cases: 4757<br />type: confirmed","date: 2020-06-19<br />cases: 4301<br />type: confirmed","date: 2020-06-20<br />cases: 3941<br />type: confirmed","date: 2020-06-21<br />cases: 3379<br />type: confirmed","date: 2020-06-22<br />cases: 3393<br />type: confirmed","date: 2020-06-23<br />cases: 3139<br />type: confirmed","date: 2020-06-24<br />cases: 3123<br />type: confirmed","date: 2020-06-25<br />cases: 3372<br />type: confirmed","date: 2020-06-26<br />cases: 3938<br />type: confirmed","date: 2020-06-27<br />cases: 3927<br />type: confirmed","date: 2020-06-28<br />cases: 3989<br />type: confirmed","date: 2020-06-29<br />cases: 3943<br />type: confirmed","date: 2020-06-30<br />cases: 4387<br />type: confirmed","date: 2020-07-01<br />cases: 3402<br />type: confirmed","date: 2020-07-02<br />cases: 3383<br />type: confirmed","date: 2020-07-03<br />cases: 4193<br />type: confirmed","date: 2020-07-04<br />cases: 4128<br />type: confirmed","date: 2020-07-05<br />cases: 3580<br />type: confirmed","date: 2020-07-06<br />cases: 4207<br />type: confirmed","date: 2020-07-07<br />cases: 3392<br />type: confirmed","date: 2020-07-08<br />cases: 3036<br />type: confirmed","date: 2020-07-09<br />cases: 3183<br />type: confirmed","date: 2020-07-10<br />cases: 3159<br />type: confirmed","date: 2020-07-11<br />cases: 2994<br />type: confirmed","date: 2020-07-12<br />cases: 2779<br />type: confirmed","date: 2020-07-13<br />cases: 2852<br />type: confirmed","date: 2020-07-14<br />cases: 2692<br />type: confirmed","date: 2020-07-15<br />cases: 2671<br />type: confirmed","date: 2020-07-16<br />cases: 2764<br />type: confirmed","date: 2020-07-17<br />cases: 2613<br />type: confirmed","date: 2020-07-18<br />cases: 2565<br />type: confirmed","date: 2020-07-19<br />cases: 2504<br />type: confirmed","date: 2020-07-20<br />cases: 2429<br />type: confirmed","date: 2020-07-21<br />cases: 2476<br />type: confirmed","date: 2020-07-22<br />cases: 2331<br />type: confirmed","date: 2020-07-23<br />cases: 2238<br />type: confirmed","date: 2020-07-24<br />cases: 2378<br />type: confirmed","date: 2020-07-25<br />cases: 2201<br />type: confirmed","date: 2020-07-26<br />cases: 1968<br />type: confirmed","date: 2020-07-27<br />cases: 1993<br />type: confirmed","date: 2020-07-28<br />cases: 1897<br />type: confirmed","date: 2020-07-29<br />cases: 1759<br />type: confirmed","date: 2020-07-30<br />cases: 1629<br />type: confirmed","date: 2020-07-31<br />cases: 1686<br />type: confirmed","date: 2020-08-01<br />cases: 1573<br />type: confirmed","date: 2020-08-02<br />cases: 1357<br />type: confirmed","date: 2020-08-03<br />cases: 1258<br />type: confirmed","date: 2020-08-04<br />cases: 1363<br />type: confirmed","date: 2020-08-05<br />cases: 1368<br />type: confirmed","date: 2020-08-06<br />cases: 1402<br />type: confirmed","date: 2020-08-07<br />cases: 1567<br />type: confirmed","date: 2020-08-08<br />cases: 1469<br />type: confirmed","date: 2020-08-09<br />cases: 1428<br />type: confirmed","date: 2020-08-10<br />cases: 1257<br />type: confirmed","date: 2020-08-11<br />cases: 1521<br />type: confirmed","date: 2020-08-12<br />cases: 1569<br />type: confirmed","date: 2020-08-13<br />cases: 1482<br />type: confirmed","date: 2020-08-14<br />cases: 1383<br />type: confirmed","date: 2020-08-15<br />cases: 1413<br />type: confirmed","date: 2020-08-16<br />cases: 1227<br />type: confirmed","date: 2020-08-17<br />cases: 1372<br />type: confirmed","date: 2020-08-18<br />cases: 1409<br />type: confirmed","date: 2020-08-19<br />cases: 1363<br />type: confirmed","date: 2020-08-20<br />cases: 1287<br />type: confirmed","date: 2020-08-21<br />cases: 1213<br />type: confirmed","date: 2020-08-22<br />cases: 1184<br />type: confirmed","date: 2020-08-23<br />cases: 1109<br />type: confirmed","date: 2020-08-24<br />cases: 1175<br />type: confirmed","date: 2020-08-25<br />cases: 1114<br />type: confirmed","date: 2020-08-26<br />cases: 1068<br />type: confirmed","date: 2020-08-27<br />cases: 1019<br />type: confirmed","date: 2020-08-28<br />cases: 1069<br />type: confirmed","date: 2020-08-29<br />cases:  987<br />type: confirmed","date: 2020-08-30<br />cases:  910<br />type: confirmed","date: 2020-08-31<br />cases:  951<br />type: confirmed","date: 2020-09-01<br />cases:  898<br />type: confirmed","date: 2020-09-02<br />cases:  816<br />type: confirmed","date: 2020-09-03<br />cases:  833<br />type: confirmed","date: 2020-09-04<br />cases:  822<br />type: confirmed","date: 2020-09-05<br />cases:  791<br />type: confirmed","date: 2020-09-06<br />cases:  756<br />type: confirmed","date: 2020-09-07<br />cases:  768<br />type: confirmed","date: 2020-09-08<br />cases:  781<br />type: confirmed","date: 2020-09-09<br />cases:  775<br />type: confirmed","date: 2020-09-10<br />cases:  708<br />type: confirmed","date: 2020-01-22<br />cases:    0<br />type: confirmed","date: 2020-01-23<br />cases:    0<br />type: confirmed","date: 2020-01-24<br />cases:    0<br />type: confirmed","date: 2020-01-25<br />cases:    0<br />type: confirmed","date: 2020-01-26<br />cases:    0<br />type: confirmed","date: 2020-01-27<br />cases:    0<br />type: confirmed","date: 2020-01-28<br />cases:    0<br />type: confirmed","date: 2020-01-29<br />cases:    0<br />type: confirmed","date: 2020-01-30<br />cases:    0<br />type: confirmed","date: 2020-01-31<br />cases:    0<br />type: confirmed","date: 2020-02-01<br />cases:    0<br />type: confirmed","date: 2020-02-02<br />cases:    0<br />type: confirmed","date: 2020-02-03<br />cases:    0<br />type: confirmed","date: 2020-02-04<br />cases:    0<br />type: confirmed","date: 2020-02-05<br />cases:    0<br />type: confirmed","date: 2020-02-06<br />cases:    0<br />type: confirmed","date: 2020-02-07<br />cases:    0<br />type: confirmed","date: 2020-02-08<br />cases:    0<br />type: confirmed","date: 2020-02-09<br />cases:    0<br />type: confirmed","date: 2020-02-10<br />cases:    0<br />type: confirmed","date: 2020-02-11<br />cases:    0<br />type: confirmed","date: 2020-02-12<br />cases:    0<br />type: confirmed","date: 2020-02-13<br />cases:    0<br />type: confirmed","date: 2020-02-14<br />cases:    0<br />type: confirmed","date: 2020-02-15<br />cases:    0<br />type: confirmed","date: 2020-02-16<br />cases:    0<br />type: confirmed","date: 2020-02-17<br />cases:    0<br />type: confirmed","date: 2020-02-18<br />cases:    0<br />type: confirmed","date: 2020-02-19<br />cases:    0<br />type: confirmed","date: 2020-02-20<br />cases:    0<br />type: confirmed","date: 2020-02-21<br />cases:    0<br />type: confirmed","date: 2020-02-22<br />cases:    0<br />type: confirmed","date: 2020-02-23<br />cases:    0<br />type: confirmed","date: 2020-02-24<br />cases:    0<br />type: confirmed","date: 2020-02-25<br />cases:    0<br />type: confirmed","date: 2020-02-26<br />cases:    0<br />type: confirmed","date: 2020-02-27<br />cases:    0<br />type: confirmed","date: 2020-02-28<br />cases:    0<br />type: confirmed","date: 2020-02-29<br />cases:    0<br />type: confirmed","date: 2020-03-01<br />cases:    0<br />type: confirmed","date: 2020-03-02<br />cases:    1<br />type: confirmed","date: 2020-03-03<br />cases:    0<br />type: confirmed","date: 2020-03-04<br />cases:    0<br />type: confirmed","date: 2020-03-05<br />cases:    4<br />type: confirmed","date: 2020-03-06<br />cases:    0<br />type: confirmed","date: 2020-03-07<br />cases:    0<br />type: confirmed","date: 2020-03-08<br />cases:    6<br />type: confirmed","date: 2020-03-09<br />cases:    4<br />type: confirmed","date: 2020-03-10<br />cases:    5<br />type: confirmed","date: 2020-03-11<br />cases:    1<br />type: confirmed","date: 2020-03-12<br />cases:   24<br />type: confirmed","date: 2020-03-13<br />cases:   41<br />type: confirmed","date: 2020-03-14<br />cases:   17<br />type: confirmed","date: 2020-03-15<br />cases:    0<br />type: confirmed","date: 2020-03-16<br />cases:   15<br />type: confirmed","date: 2020-03-17<br />cases:   53<br />type: confirmed","date: 2020-03-18<br />cases:    0<br />type: confirmed","date: 2020-03-19<br />cases:  103<br />type: confirmed","date: 2020-03-20<br />cases:   70<br />type: confirmed","date: 2020-03-21<br />cases:   48<br />type: confirmed","date: 2020-03-22<br />cases:  119<br />type: confirmed","date: 2020-03-23<br />cases:   51<br />type: confirmed","date: 2020-03-24<br />cases:  205<br />type: confirmed","date: 2020-03-25<br />cases:  133<br />type: confirmed","date: 2020-03-26<br />cases:  112<br />type: confirmed","date: 2020-03-27<br />cases:   92<br />type: confirmed","date: 2020-03-28<br />cases:   99<br />type: confirmed","date: 2020-03-29<br />cases:   96<br />type: confirmed","date: 2020-03-30<br />cases:  154<br />type: confirmed","date: 2020-03-31<br />cases:  110<br />type: confirmed","date: 2020-04-01<br />cases:  157<br />type: confirmed","date: 2020-04-02<br />cases:  165<br />type: confirmed","date: 2020-04-03<br />cases:  154<br />type: confirmed","date: 2020-04-04<br />cases:  140<br />type: confirmed","date: 2020-04-05<br />cases:  223<br />type: confirmed","date: 2020-04-06<br />cases:  203<br />type: confirmed","date: 2020-04-07<br />cases:  190<br />type: confirmed","date: 2020-04-08<br />cases:  137<br />type: confirmed","date: 2020-04-09<br />cases:  355<br />type: confirmed","date: 2020-04-10<br />cases:  364<br />type: confirmed","date: 2020-04-11<br />cases:  382<br />type: confirmed","date: 2020-04-12<br />cases:  429<br />type: confirmed","date: 2020-04-13<br />cases:  472<br />type: confirmed","date: 2020-04-14<br />cases:  435<br />type: confirmed","date: 2020-04-15<br />cases:  493<br />type: confirmed","date: 2020-04-16<br />cases:  518<br />type: confirmed","date: 2020-04-17<br />cases:  762<br />type: confirmed","date: 2020-04-18<br />cases: 1132<br />type: confirmed","date: 2020-04-19<br />cases: 1088<br />type: confirmed","date: 2020-04-20<br />cases: 1122<br />type: confirmed","date: 2020-04-21<br />cases: 1147<br />type: confirmed","date: 2020-04-22<br />cases: 1141<br />type: confirmed","date: 2020-04-23<br />cases: 1158<br />type: confirmed","date: 2020-04-24<br />cases: 1172<br />type: confirmed","date: 2020-04-25<br />cases: 1197<br />type: confirmed","date: 2020-04-26<br />cases: 1223<br />type: confirmed","date: 2020-04-27<br />cases: 1289<br />type: confirmed","date: 2020-04-28<br />cases: 1266<br />type: confirmed","date: 2020-04-29<br />cases: 1325<br />type: confirmed","date: 2020-04-30<br />cases: 1351<br />type: confirmed","date: 2020-05-01<br />cases: 1344<br />type: confirmed","date: 2020-05-02<br />cases: 1362<br />type: confirmed","date: 2020-05-03<br />cases: 1552<br />type: confirmed","date: 2020-05-04<br />cases: 1645<br />type: confirmed","date: 2020-05-05<br />cases: 1595<br />type: confirmed","date: 2020-05-06<br />cases: 1687<br />type: confirmed","date: 2020-05-07<br />cases: 1793<br />type: confirmed","date: 2020-05-08<br />cases: 1701<br />type: confirmed","date: 2020-05-09<br />cases: 1704<br />type: confirmed","date: 2020-05-10<br />cases: 1912<br />type: confirmed","date: 2020-05-11<br />cases: 1966<br />type: confirmed","date: 2020-05-12<br />cases: 1911<br />type: confirmed"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"confirmed","legendgroup":"confirmed","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18395,18396,18397,18398,18399,18400,18401,18402,18403,18404,18405,18406,18407,18408,18409,18410,18411,18412,18413,18414,18415,18416,18417,18418,18419,18420,18421,18422,18423,18424,18425,18426,18427,18428,18429,18430,18431,18432,18433,18434,18435,18436,18437,18438,18439,18440,18441,18442,18443,18444,18445,18446,18447,18448,18449,18450,18451,18452,18453,18454,18455,18456,18457,18458,18459,18460,18461,18462,18463,18464,18465,18466,18467,18468,18469,18470,18471,18472,18473,18474,18475,18476,18477,18478,18479,18480,18481,18482,18483,18484,18485,18486,18487,18488,18489,18490,18491,18492,18493,18494,18495,18496,18497,18498,18499,18500,18501,18502,18503,18504,18505,18506,18507,18508,18509,18510,18511,18512,18513,18514,18515,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"y":[9,10,9,10,10,8,9,10,12,13,15,11,9,12,14,16,17,22,23,22,24,30,32,31,34,36,34,37,36,38,36,39,40,39,41,39,48,45,46,37,40,39,41,41,46,37,40,48,50,49,54,50,56,58,52,49,42,41,51,30,42,20,40,42,45,37,40,39,37,34,44,34,37,31,30,27,29,27,26,24,21,30,32,35,36,35,38,37,37,32,34,36,34,35,31,39,28,34,36,42,32,39,30,42,31,33,30,28,27,30,27,32,27,26,33,34,32,26,30,28,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,4,0,2,6,5,4,4,5,4,3,0,3,3,5,7,6,8,6,4,4,5,5,6,6,5,7,6,9,3,5,8,5,5,7,7,8,7,9,9,10,10,10,7,9,9],"text":["date: 2020-05-13<br />cases:    9<br />type: death","date: 2020-05-14<br />cases:   10<br />type: death","date: 2020-05-15<br />cases:    9<br />type: death","date: 2020-05-16<br />cases:   10<br />type: death","date: 2020-05-17<br />cases:   10<br />type: death","date: 2020-05-18<br />cases:    8<br />type: death","date: 2020-05-19<br />cases:    9<br />type: death","date: 2020-05-20<br />cases:   10<br />type: death","date: 2020-05-21<br />cases:   12<br />type: death","date: 2020-05-22<br />cases:   13<br />type: death","date: 2020-05-23<br />cases:   15<br />type: death","date: 2020-05-24<br />cases:   11<br />type: death","date: 2020-05-25<br />cases:    9<br />type: death","date: 2020-05-26<br />cases:   12<br />type: death","date: 2020-05-27<br />cases:   14<br />type: death","date: 2020-05-28<br />cases:   16<br />type: death","date: 2020-05-29<br />cases:   17<br />type: death","date: 2020-05-30<br />cases:   22<br />type: death","date: 2020-05-31<br />cases:   23<br />type: death","date: 2020-06-01<br />cases:   22<br />type: death","date: 2020-06-02<br />cases:   24<br />type: death","date: 2020-06-03<br />cases:   30<br />type: death","date: 2020-06-04<br />cases:   32<br />type: death","date: 2020-06-05<br />cases:   31<br />type: death","date: 2020-06-06<br />cases:   34<br />type: death","date: 2020-06-07<br />cases:   36<br />type: death","date: 2020-06-08<br />cases:   34<br />type: death","date: 2020-06-09<br />cases:   37<br />type: death","date: 2020-06-10<br />cases:   36<br />type: death","date: 2020-06-11<br />cases:   38<br />type: death","date: 2020-06-12<br />cases:   36<br />type: death","date: 2020-06-13<br />cases:   39<br />type: death","date: 2020-06-14<br />cases:   40<br />type: death","date: 2020-06-15<br />cases:   39<br />type: death","date: 2020-06-16<br />cases:   41<br />type: death","date: 2020-06-17<br />cases:   39<br />type: death","date: 2020-06-18<br />cases:   48<br />type: death","date: 2020-06-19<br />cases:   45<br />type: death","date: 2020-06-20<br />cases:   46<br />type: death","date: 2020-06-21<br />cases:   37<br />type: death","date: 2020-06-22<br />cases:   40<br />type: death","date: 2020-06-23<br />cases:   39<br />type: death","date: 2020-06-24<br />cases:   41<br />type: death","date: 2020-06-25<br />cases:   41<br />type: death","date: 2020-06-26<br />cases:   46<br />type: death","date: 2020-06-27<br />cases:   37<br />type: death","date: 2020-06-28<br />cases:   40<br />type: death","date: 2020-06-29<br />cases:   48<br />type: death","date: 2020-06-30<br />cases:   50<br />type: death","date: 2020-07-01<br />cases:   49<br />type: death","date: 2020-07-02<br />cases:   54<br />type: death","date: 2020-07-03<br />cases:   50<br />type: death","date: 2020-07-04<br />cases:   56<br />type: death","date: 2020-07-05<br />cases:   58<br />type: death","date: 2020-07-06<br />cases:   52<br />type: death","date: 2020-07-07<br />cases:   49<br />type: death","date: 2020-07-08<br />cases:   42<br />type: death","date: 2020-07-09<br />cases:   41<br />type: death","date: 2020-07-10<br />cases:   51<br />type: death","date: 2020-07-11<br />cases:   30<br />type: death","date: 2020-07-12<br />cases:   42<br />type: death","date: 2020-07-13<br />cases:   20<br />type: death","date: 2020-07-14<br />cases:   40<br />type: death","date: 2020-07-15<br />cases:   42<br />type: death","date: 2020-07-16<br />cases:   45<br />type: death","date: 2020-07-17<br />cases:   37<br />type: death","date: 2020-07-18<br />cases:   40<br />type: death","date: 2020-07-19<br />cases:   39<br />type: death","date: 2020-07-20<br />cases:   37<br />type: death","date: 2020-07-21<br />cases:   34<br />type: death","date: 2020-07-22<br />cases:   44<br />type: death","date: 2020-07-23<br />cases:   34<br />type: death","date: 2020-07-24<br />cases:   37<br />type: death","date: 2020-07-25<br />cases:   31<br />type: death","date: 2020-07-26<br />cases:   30<br />type: death","date: 2020-07-27<br />cases:   27<br />type: death","date: 2020-07-28<br />cases:   29<br />type: death","date: 2020-07-29<br />cases:   27<br />type: death","date: 2020-07-30<br />cases:   26<br />type: death","date: 2020-07-31<br />cases:   24<br />type: death","date: 2020-08-01<br />cases:   21<br />type: death","date: 2020-08-02<br />cases:   30<br />type: death","date: 2020-08-03<br />cases:   32<br />type: death","date: 2020-08-04<br />cases:   35<br />type: death","date: 2020-08-05<br />cases:   36<br />type: death","date: 2020-08-06<br />cases:   35<br />type: death","date: 2020-08-07<br />cases:   38<br />type: death","date: 2020-08-08<br />cases:   37<br />type: death","date: 2020-08-09<br />cases:   37<br />type: death","date: 2020-08-10<br />cases:   32<br />type: death","date: 2020-08-11<br />cases:   34<br />type: death","date: 2020-08-12<br />cases:   36<br />type: death","date: 2020-08-13<br />cases:   34<br />type: death","date: 2020-08-14<br />cases:   35<br />type: death","date: 2020-08-15<br />cases:   31<br />type: death","date: 2020-08-16<br />cases:   39<br />type: death","date: 2020-08-17<br />cases:   28<br />type: death","date: 2020-08-18<br />cases:   34<br />type: death","date: 2020-08-19<br />cases:   36<br />type: death","date: 2020-08-20<br />cases:   42<br />type: death","date: 2020-08-21<br />cases:   32<br />type: death","date: 2020-08-22<br />cases:   39<br />type: death","date: 2020-08-23<br />cases:   30<br />type: death","date: 2020-08-24<br />cases:   42<br />type: death","date: 2020-08-25<br />cases:   31<br />type: death","date: 2020-08-26<br />cases:   33<br />type: death","date: 2020-08-27<br />cases:   30<br />type: death","date: 2020-08-28<br />cases:   28<br />type: death","date: 2020-08-29<br />cases:   27<br />type: death","date: 2020-08-30<br />cases:   30<br />type: death","date: 2020-08-31<br />cases:   27<br />type: death","date: 2020-09-01<br />cases:   32<br />type: death","date: 2020-09-02<br />cases:   27<br />type: death","date: 2020-09-03<br />cases:   26<br />type: death","date: 2020-09-04<br />cases:   33<br />type: death","date: 2020-09-05<br />cases:   34<br />type: death","date: 2020-09-06<br />cases:   32<br />type: death","date: 2020-09-07<br />cases:   26<br />type: death","date: 2020-09-08<br />cases:   30<br />type: death","date: 2020-09-09<br />cases:   28<br />type: death","date: 2020-09-10<br />cases:   24<br />type: death","date: 2020-01-22<br />cases:    0<br />type: death","date: 2020-01-23<br />cases:    0<br />type: death","date: 2020-01-24<br />cases:    0<br />type: death","date: 2020-01-25<br />cases:    0<br />type: death","date: 2020-01-26<br />cases:    0<br />type: death","date: 2020-01-27<br />cases:    0<br />type: death","date: 2020-01-28<br />cases:    0<br />type: death","date: 2020-01-29<br />cases:    0<br />type: death","date: 2020-01-30<br />cases:    0<br />type: death","date: 2020-01-31<br />cases:    0<br />type: death","date: 2020-02-01<br />cases:    0<br />type: death","date: 2020-02-02<br />cases:    0<br />type: death","date: 2020-02-03<br />cases:    0<br />type: death","date: 2020-02-04<br />cases:    0<br />type: death","date: 2020-02-05<br />cases:    0<br />type: death","date: 2020-02-06<br />cases:    0<br />type: death","date: 2020-02-07<br />cases:    0<br />type: death","date: 2020-02-08<br />cases:    0<br />type: death","date: 2020-02-09<br />cases:    0<br />type: death","date: 2020-02-10<br />cases:    0<br />type: death","date: 2020-02-11<br />cases:    0<br />type: death","date: 2020-02-12<br />cases:    0<br />type: death","date: 2020-02-13<br />cases:    0<br />type: death","date: 2020-02-14<br />cases:    0<br />type: death","date: 2020-02-15<br />cases:    0<br />type: death","date: 2020-02-16<br />cases:    0<br />type: death","date: 2020-02-17<br />cases:    0<br />type: death","date: 2020-02-18<br />cases:    0<br />type: death","date: 2020-02-19<br />cases:    0<br />type: death","date: 2020-02-20<br />cases:    0<br />type: death","date: 2020-02-21<br />cases:    0<br />type: death","date: 2020-02-22<br />cases:    0<br />type: death","date: 2020-02-23<br />cases:    0<br />type: death","date: 2020-02-24<br />cases:    0<br />type: death","date: 2020-02-25<br />cases:    0<br />type: death","date: 2020-02-26<br />cases:    0<br />type: death","date: 2020-02-27<br />cases:    0<br />type: death","date: 2020-02-28<br />cases:    0<br />type: death","date: 2020-02-29<br />cases:    0<br />type: death","date: 2020-03-01<br />cases:    0<br />type: death","date: 2020-03-02<br />cases:    0<br />type: death","date: 2020-03-03<br />cases:    0<br />type: death","date: 2020-03-04<br />cases:    0<br />type: death","date: 2020-03-05<br />cases:    0<br />type: death","date: 2020-03-06<br />cases:    0<br />type: death","date: 2020-03-07<br />cases:    0<br />type: death","date: 2020-03-08<br />cases:    0<br />type: death","date: 2020-03-09<br />cases:    0<br />type: death","date: 2020-03-10<br />cases:    0<br />type: death","date: 2020-03-11<br />cases:    0<br />type: death","date: 2020-03-12<br />cases:    0<br />type: death","date: 2020-03-13<br />cases:    0<br />type: death","date: 2020-03-14<br />cases:    0<br />type: death","date: 2020-03-15<br />cases:    0<br />type: death","date: 2020-03-16<br />cases:    0<br />type: death","date: 2020-03-17<br />cases:    0<br />type: death","date: 2020-03-18<br />cases:    0<br />type: death","date: 2020-03-19<br />cases:    0<br />type: death","date: 2020-03-20<br />cases:    0<br />type: death","date: 2020-03-21<br />cases:    0<br />type: death","date: 2020-03-22<br />cases:    0<br />type: death","date: 2020-03-23<br />cases:    0<br />type: death","date: 2020-03-24<br />cases:    1<br />type: death","date: 2020-03-25<br />cases:    1<br />type: death","date: 2020-03-26<br />cases:    1<br />type: death","date: 2020-03-27<br />cases:    0<br />type: death","date: 2020-03-28<br />cases:    1<br />type: death","date: 2020-03-29<br />cases:    4<br />type: death","date: 2020-03-30<br />cases:    0<br />type: death","date: 2020-03-31<br />cases:    2<br />type: death","date: 2020-04-01<br />cases:    6<br />type: death","date: 2020-04-02<br />cases:    5<br />type: death","date: 2020-04-03<br />cases:    4<br />type: death","date: 2020-04-04<br />cases:    4<br />type: death","date: 2020-04-05<br />cases:    5<br />type: death","date: 2020-04-06<br />cases:    4<br />type: death","date: 2020-04-07<br />cases:    3<br />type: death","date: 2020-04-08<br />cases:    0<br />type: death","date: 2020-04-09<br />cases:    3<br />type: death","date: 2020-04-10<br />cases:    3<br />type: death","date: 2020-04-11<br />cases:    5<br />type: death","date: 2020-04-12<br />cases:    7<br />type: death","date: 2020-04-13<br />cases:    6<br />type: death","date: 2020-04-14<br />cases:    8<br />type: death","date: 2020-04-15<br />cases:    6<br />type: death","date: 2020-04-16<br />cases:    4<br />type: death","date: 2020-04-17<br />cases:    4<br />type: death","date: 2020-04-18<br />cases:    5<br />type: death","date: 2020-04-19<br />cases:    5<br />type: death","date: 2020-04-20<br />cases:    6<br />type: death","date: 2020-04-21<br />cases:    6<br />type: death","date: 2020-04-22<br />cases:    5<br />type: death","date: 2020-04-23<br />cases:    7<br />type: death","date: 2020-04-24<br />cases:    6<br />type: death","date: 2020-04-25<br />cases:    9<br />type: death","date: 2020-04-26<br />cases:    3<br />type: death","date: 2020-04-27<br />cases:    5<br />type: death","date: 2020-04-28<br />cases:    8<br />type: death","date: 2020-04-29<br />cases:    5<br />type: death","date: 2020-04-30<br />cases:    5<br />type: death","date: 2020-05-01<br />cases:    7<br />type: death","date: 2020-05-02<br />cases:    7<br />type: death","date: 2020-05-03<br />cases:    8<br />type: death","date: 2020-05-04<br />cases:    7<br />type: death","date: 2020-05-05<br />cases:    9<br />type: death","date: 2020-05-06<br />cases:    9<br />type: death","date: 2020-05-07<br />cases:   10<br />type: death","date: 2020-05-08<br />cases:   10<br />type: death","date: 2020-05-09<br />cases:   10<br />type: death","date: 2020-05-10<br />cases:    7<br />type: death","date: 2020-05-11<br />cases:    9<br />type: death","date: 2020-05-12<br />cases:    9<br />type: death"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,186,56,1)","dash":"solid"},"hoveron":"points","name":"death","legendgroup":"death","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18395,18396,18397,18398,18399,18400,18401,18402,18403,18404,18405,18406,18407,18408,18409,18410,18411,18412,18413,18414,18415,18416,18417,18418,18419,18420,18421,18422,18423,18424,18425,18426,18427,18428,18429,18430,18431,18432,18433,18434,18435,18436,18437,18438,18439,18440,18441,18442,18443,18444,18445,18446,18447,18448,18449,18450,18451,18452,18453,18454,18455,18456,18457,18458,18459,18460,18461,18462,18463,18464,18465,18466,18467,18468,18469,18470,18471,18472,18473,18474,18475,18476,18477,18478,18479,18480,18481,18482,18483,18484,18485,18486,18487,18488,18489,18490,18491,18492,18493,18494,18495,18496,18497,18498,18499,18500,18501,18502,18503,18504,18505,18506,18507,18508,18509,18510,18511,18512,18513,18514,18515,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"y":[2365,1429,2818,1797,2056,3026,2886,1844,2562,2963,2233,2284,2148,2782,2572,3531,2460,1870,3559,1864,1484,2369,806,1651,1175,1026,1707,1815,1615,2065,1010,1519,2172,3170,1650,2122,2253,1849,3153,2213,4045,4710,2912,5085,2589,1657,2627,2363,3648,1994,4909,2945,2642,1980,4398,5205,3211,3046,1930,2370,1742,2704,7718,5488,4574,3539,3057,3517,5524,4000,3139,3092,2241,2051,2541,2613,2688,2945,2629,4460,1890,2533,1974,1658,1601,1775,1859,1492,1599,1439,1640,2151,3124,2566,1528,2466,1432,4526,1180,1385,1591,1374,1702,2745,1044,1013,1310,1148,1038,1226,1129,718,996,1454,1099,779,895,886,623,720,1032,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,4,0,0,2,8,0,0,12,1,4,2,2,29,49,50,99,64,23,69,68,63,64,16,35,19,35,41,44,84,42,59,59,280,69,92,150,172,113,124,166,142,174,253,169,210,392,210,369,342,955,1352,1015,1322,1024,1313,1280,2520],"text":["date: 2020-05-13<br />cases: 2365<br />type: recovered","date: 2020-05-14<br />cases: 1429<br />type: recovered","date: 2020-05-15<br />cases: 2818<br />type: recovered","date: 2020-05-16<br />cases: 1797<br />type: recovered","date: 2020-05-17<br />cases: 2056<br />type: recovered","date: 2020-05-18<br />cases: 3026<br />type: recovered","date: 2020-05-19<br />cases: 2886<br />type: recovered","date: 2020-05-20<br />cases: 1844<br />type: recovered","date: 2020-05-21<br />cases: 2562<br />type: recovered","date: 2020-05-22<br />cases: 2963<br />type: recovered","date: 2020-05-23<br />cases: 2233<br />type: recovered","date: 2020-05-24<br />cases: 2284<br />type: recovered","date: 2020-05-25<br />cases: 2148<br />type: recovered","date: 2020-05-26<br />cases: 2782<br />type: recovered","date: 2020-05-27<br />cases: 2572<br />type: recovered","date: 2020-05-28<br />cases: 3531<br />type: recovered","date: 2020-05-29<br />cases: 2460<br />type: recovered","date: 2020-05-30<br />cases: 1870<br />type: recovered","date: 2020-05-31<br />cases: 3559<br />type: recovered","date: 2020-06-01<br />cases: 1864<br />type: recovered","date: 2020-06-02<br />cases: 1484<br />type: recovered","date: 2020-06-03<br />cases: 2369<br />type: recovered","date: 2020-06-04<br />cases:  806<br />type: recovered","date: 2020-06-05<br />cases: 1651<br />type: recovered","date: 2020-06-06<br />cases: 1175<br />type: recovered","date: 2020-06-07<br />cases: 1026<br />type: recovered","date: 2020-06-08<br />cases: 1707<br />type: recovered","date: 2020-06-09<br />cases: 1815<br />type: recovered","date: 2020-06-10<br />cases: 1615<br />type: recovered","date: 2020-06-11<br />cases: 2065<br />type: recovered","date: 2020-06-12<br />cases: 1010<br />type: recovered","date: 2020-06-13<br />cases: 1519<br />type: recovered","date: 2020-06-14<br />cases: 2172<br />type: recovered","date: 2020-06-15<br />cases: 3170<br />type: recovered","date: 2020-06-16<br />cases: 1650<br />type: recovered","date: 2020-06-17<br />cases: 2122<br />type: recovered","date: 2020-06-18<br />cases: 2253<br />type: recovered","date: 2020-06-19<br />cases: 1849<br />type: recovered","date: 2020-06-20<br />cases: 3153<br />type: recovered","date: 2020-06-21<br />cases: 2213<br />type: recovered","date: 2020-06-22<br />cases: 4045<br />type: recovered","date: 2020-06-23<br />cases: 4710<br />type: recovered","date: 2020-06-24<br />cases: 2912<br />type: recovered","date: 2020-06-25<br />cases: 5085<br />type: recovered","date: 2020-06-26<br />cases: 2589<br />type: recovered","date: 2020-06-27<br />cases: 1657<br />type: recovered","date: 2020-06-28<br />cases: 2627<br />type: recovered","date: 2020-06-29<br />cases: 2363<br />type: recovered","date: 2020-06-30<br />cases: 3648<br />type: recovered","date: 2020-07-01<br />cases: 1994<br />type: recovered","date: 2020-07-02<br />cases: 4909<br />type: recovered","date: 2020-07-03<br />cases: 2945<br />type: recovered","date: 2020-07-04<br />cases: 2642<br />type: recovered","date: 2020-07-05<br />cases: 1980<br />type: recovered","date: 2020-07-06<br />cases: 4398<br />type: recovered","date: 2020-07-07<br />cases: 5205<br />type: recovered","date: 2020-07-08<br />cases: 3211<br />type: recovered","date: 2020-07-09<br />cases: 3046<br />type: recovered","date: 2020-07-10<br />cases: 1930<br />type: recovered","date: 2020-07-11<br />cases: 2370<br />type: recovered","date: 2020-07-12<br />cases: 1742<br />type: recovered","date: 2020-07-13<br />cases: 2704<br />type: recovered","date: 2020-07-14<br />cases: 7718<br />type: recovered","date: 2020-07-15<br />cases: 5488<br />type: recovered","date: 2020-07-16<br />cases: 4574<br />type: recovered","date: 2020-07-17<br />cases: 3539<br />type: recovered","date: 2020-07-18<br />cases: 3057<br />type: recovered","date: 2020-07-19<br />cases: 3517<br />type: recovered","date: 2020-07-20<br />cases: 5524<br />type: recovered","date: 2020-07-21<br />cases: 4000<br />type: recovered","date: 2020-07-22<br />cases: 3139<br />type: recovered","date: 2020-07-23<br />cases: 3092<br />type: recovered","date: 2020-07-24<br />cases: 2241<br />type: recovered","date: 2020-07-25<br />cases: 2051<br />type: recovered","date: 2020-07-26<br />cases: 2541<br />type: recovered","date: 2020-07-27<br />cases: 2613<br />type: recovered","date: 2020-07-28<br />cases: 2688<br />type: recovered","date: 2020-07-29<br />cases: 2945<br />type: recovered","date: 2020-07-30<br />cases: 2629<br />type: recovered","date: 2020-07-31<br />cases: 4460<br />type: recovered","date: 2020-08-01<br />cases: 1890<br />type: recovered","date: 2020-08-02<br />cases: 2533<br />type: recovered","date: 2020-08-03<br />cases: 1974<br />type: recovered","date: 2020-08-04<br />cases: 1658<br />type: recovered","date: 2020-08-05<br />cases: 1601<br />type: recovered","date: 2020-08-06<br />cases: 1775<br />type: recovered","date: 2020-08-07<br />cases: 1859<br />type: recovered","date: 2020-08-08<br />cases: 1492<br />type: recovered","date: 2020-08-09<br />cases: 1599<br />type: recovered","date: 2020-08-10<br />cases: 1439<br />type: recovered","date: 2020-08-11<br />cases: 1640<br />type: recovered","date: 2020-08-12<br />cases: 2151<br />type: recovered","date: 2020-08-13<br />cases: 3124<br />type: recovered","date: 2020-08-14<br />cases: 2566<br />type: recovered","date: 2020-08-15<br />cases: 1528<br />type: recovered","date: 2020-08-16<br />cases: 2466<br />type: recovered","date: 2020-08-17<br />cases: 1432<br />type: recovered","date: 2020-08-18<br />cases: 4526<br />type: recovered","date: 2020-08-19<br />cases: 1180<br />type: recovered","date: 2020-08-20<br />cases: 1385<br />type: recovered","date: 2020-08-21<br />cases: 1591<br />type: recovered","date: 2020-08-22<br />cases: 1374<br />type: recovered","date: 2020-08-23<br />cases: 1702<br />type: recovered","date: 2020-08-24<br />cases: 2745<br />type: recovered","date: 2020-08-25<br />cases: 1044<br />type: recovered","date: 2020-08-26<br />cases: 1013<br />type: recovered","date: 2020-08-27<br />cases: 1310<br />type: recovered","date: 2020-08-28<br />cases: 1148<br />type: recovered","date: 2020-08-29<br />cases: 1038<br />type: recovered","date: 2020-08-30<br />cases: 1226<br />type: recovered","date: 2020-08-31<br />cases: 1129<br />type: recovered","date: 2020-09-01<br />cases:  718<br />type: recovered","date: 2020-09-02<br />cases:  996<br />type: recovered","date: 2020-09-03<br />cases: 1454<br />type: recovered","date: 2020-09-04<br />cases: 1099<br />type: recovered","date: 2020-09-05<br />cases:  779<br />type: recovered","date: 2020-09-06<br />cases:  895<br />type: recovered","date: 2020-09-07<br />cases:  886<br />type: recovered","date: 2020-09-08<br />cases:  623<br />type: recovered","date: 2020-09-09<br />cases:  720<br />type: recovered","date: 2020-09-10<br />cases: 1032<br />type: recovered","date: 2020-01-22<br />cases:    0<br />type: recovered","date: 2020-01-23<br />cases:    0<br />type: recovered","date: 2020-01-24<br />cases:    0<br />type: recovered","date: 2020-01-25<br />cases:    0<br />type: recovered","date: 2020-01-26<br />cases:    0<br />type: recovered","date: 2020-01-27<br />cases:    0<br />type: recovered","date: 2020-01-28<br />cases:    0<br />type: recovered","date: 2020-01-29<br />cases:    0<br />type: recovered","date: 2020-01-30<br />cases:    0<br />type: recovered","date: 2020-01-31<br />cases:    0<br />type: recovered","date: 2020-02-01<br />cases:    0<br />type: recovered","date: 2020-02-02<br />cases:    0<br />type: recovered","date: 2020-02-03<br />cases:    0<br />type: recovered","date: 2020-02-04<br />cases:    0<br />type: recovered","date: 2020-02-05<br />cases:    0<br />type: recovered","date: 2020-02-06<br />cases:    0<br />type: recovered","date: 2020-02-07<br />cases:    0<br />type: recovered","date: 2020-02-08<br />cases:    0<br />type: recovered","date: 2020-02-09<br />cases:    0<br />type: recovered","date: 2020-02-10<br />cases:    0<br />type: recovered","date: 2020-02-11<br />cases:    0<br />type: recovered","date: 2020-02-12<br />cases:    0<br />type: recovered","date: 2020-02-13<br />cases:    0<br />type: recovered","date: 2020-02-14<br />cases:    0<br />type: recovered","date: 2020-02-15<br />cases:    0<br />type: recovered","date: 2020-02-16<br />cases:    0<br />type: recovered","date: 2020-02-17<br />cases:    0<br />type: recovered","date: 2020-02-18<br />cases:    0<br />type: recovered","date: 2020-02-19<br />cases:    0<br />type: recovered","date: 2020-02-20<br />cases:    0<br />type: recovered","date: 2020-02-21<br />cases:    0<br />type: recovered","date: 2020-02-22<br />cases:    0<br />type: recovered","date: 2020-02-23<br />cases:    0<br />type: recovered","date: 2020-02-24<br />cases:    0<br />type: recovered","date: 2020-02-25<br />cases:    0<br />type: recovered","date: 2020-02-26<br />cases:    0<br />type: recovered","date: 2020-02-27<br />cases:    0<br />type: recovered","date: 2020-02-28<br />cases:    0<br />type: recovered","date: 2020-02-29<br />cases:    0<br />type: recovered","date: 2020-03-01<br />cases:    0<br />type: recovered","date: 2020-03-02<br />cases:    0<br />type: recovered","date: 2020-03-03<br />cases:    0<br />type: recovered","date: 2020-03-04<br />cases:    0<br />type: recovered","date: 2020-03-05<br />cases:    0<br />type: recovered","date: 2020-03-06<br />cases:    0<br />type: recovered","date: 2020-03-07<br />cases:    0<br />type: recovered","date: 2020-03-08<br />cases:    0<br />type: recovered","date: 2020-03-09<br />cases:    0<br />type: recovered","date: 2020-03-10<br />cases:    1<br />type: recovered","date: 2020-03-11<br />cases:    0<br />type: recovered","date: 2020-03-12<br />cases:    0<br />type: recovered","date: 2020-03-13<br />cases:    0<br />type: recovered","date: 2020-03-14<br />cases:    0<br />type: recovered","date: 2020-03-15<br />cases:    0<br />type: recovered","date: 2020-03-16<br />cases:    1<br />type: recovered","date: 2020-03-17<br />cases:    4<br />type: recovered","date: 2020-03-18<br />cases:    0<br />type: recovered","date: 2020-03-19<br />cases:    0<br />type: recovered","date: 2020-03-20<br />cases:    2<br />type: recovered","date: 2020-03-21<br />cases:    8<br />type: recovered","date: 2020-03-22<br />cases:    0<br />type: recovered","date: 2020-03-23<br />cases:    0<br />type: recovered","date: 2020-03-24<br />cases:   12<br />type: recovered","date: 2020-03-25<br />cases:    1<br />type: recovered","date: 2020-03-26<br />cases:    4<br />type: recovered","date: 2020-03-27<br />cases:    2<br />type: recovered","date: 2020-03-28<br />cases:    2<br />type: recovered","date: 2020-03-29<br />cases:   29<br />type: recovered","date: 2020-03-30<br />cases:   49<br />type: recovered","date: 2020-03-31<br />cases:   50<br />type: recovered","date: 2020-04-01<br />cases:   99<br />type: recovered","date: 2020-04-02<br />cases:   64<br />type: recovered","date: 2020-04-03<br />cases:   23<br />type: recovered","date: 2020-04-04<br />cases:   69<br />type: recovered","date: 2020-04-05<br />cases:   68<br />type: recovered","date: 2020-04-06<br />cases:   63<br />type: recovered","date: 2020-04-07<br />cases:   64<br />type: recovered","date: 2020-04-08<br />cases:   16<br />type: recovered","date: 2020-04-09<br />cases:   35<br />type: recovered","date: 2020-04-10<br />cases:   19<br />type: recovered","date: 2020-04-11<br />cases:   35<br />type: recovered","date: 2020-04-12<br />cases:   41<br />type: recovered","date: 2020-04-13<br />cases:   44<br />type: recovered","date: 2020-04-14<br />cases:   84<br />type: recovered","date: 2020-04-15<br />cases:   42<br />type: recovered","date: 2020-04-16<br />cases:   59<br />type: recovered","date: 2020-04-17<br />cases:   59<br />type: recovered","date: 2020-04-18<br />cases:  280<br />type: recovered","date: 2020-04-19<br />cases:   69<br />type: recovered","date: 2020-04-20<br />cases:   92<br />type: recovered","date: 2020-04-21<br />cases:  150<br />type: recovered","date: 2020-04-22<br />cases:  172<br />type: recovered","date: 2020-04-23<br />cases:  113<br />type: recovered","date: 2020-04-24<br />cases:  124<br />type: recovered","date: 2020-04-25<br />cases:  166<br />type: recovered","date: 2020-04-26<br />cases:  142<br />type: recovered","date: 2020-04-27<br />cases:  174<br />type: recovered","date: 2020-04-28<br />cases:  253<br />type: recovered","date: 2020-04-29<br />cases:  169<br />type: recovered","date: 2020-04-30<br />cases:  210<br />type: recovered","date: 2020-05-01<br />cases:  392<br />type: recovered","date: 2020-05-02<br />cases:  210<br />type: recovered","date: 2020-05-03<br />cases:  369<br />type: recovered","date: 2020-05-04<br />cases:  342<br />type: recovered","date: 2020-05-05<br />cases:  955<br />type: recovered","date: 2020-05-06<br />cases: 1352<br />type: recovered","date: 2020-05-07<br />cases: 1015<br />type: recovered","date: 2020-05-08<br />cases: 1322<br />type: recovered","date: 2020-05-09<br />cases: 1024<br />type: recovered","date: 2020-05-10<br />cases: 1313<br />type: recovered","date: 2020-05-11<br />cases: 1280<br />type: recovered","date: 2020-05-12<br />cases: 2520<br />type: recovered"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(97,156,255,1)","dash":"solid"},"hoveron":"points","name":"recovered","legendgroup":"recovered","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.4063926940639,"r":7.30593607305936,"b":41.8264840182648,"l":48.9497716894977},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Daily cases in Saudi Arabia","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18388.85,18524.15],"tickmode":"array","ticktext":["Jun-2020","Jul-2020","Aug-2020","Sep-2020"],"tickvals":[18414,18444,18475,18506],"categoryorder":"array","categoryarray":["Jun-2020","Jul-2020","Aug-2020","Sep-2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"date","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-385.9,8103.9],"tickmode":"array","ticktext":["0","2000","4000","6000","8000"],"tickvals":[0,2000,4000,6000,8000],"categoryorder":"array","categoryarray":["0","2000","4000","6000","8000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"cases","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"y":-0.2,"orientation":"h","x":0.3},"annotations":[{"text":"type","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false,"displayModeBar":false},"source":"A","attrs":{"473c27c208":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"473c27c208","visdat":{"473c27c208":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 1: Daily cases in Iraq from January until August, overall the trend of cases is raising until reached the peak in June after that it declined overtime.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:death-saudi"></span>
+<div id="htmlwidget-7e2bdaacd44d58603279" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7e2bdaacd44d58603279">{"x":{"data":[{"x":[18395,18396,18397,18398,18399,18400,18401,18402,18403,18404,18405,18406,18407,18408,18409,18410,18411,18412,18413,18414,18415,18416,18417,18418,18419,18420,18421,18422,18423,18424,18425,18426,18427,18428,18429,18430,18431,18432,18433,18434,18435,18436,18437,18438,18439,18440,18441,18442,18443,18444,18445,18446,18447,18448,18449,18450,18451,18452,18453,18454,18455,18456,18457,18458,18459,18460,18461,18462,18463,18464,18465,18466,18467,18468,18469,18470,18471,18472,18473,18474,18475,18476,18477,18478,18479,18480,18481,18482,18483,18484,18485,18486,18487,18488,18489,18490,18491,18492,18493,18494,18495,18496,18497,18498,18499,18500,18501,18502,18503,18504,18505,18506,18507,18508,18509,18510,18511,18512,18513,18514,18515,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"y":[9,10,9,10,10,8,9,10,12,13,15,11,9,12,14,16,17,22,23,22,24,30,32,31,34,36,34,37,36,38,36,39,40,39,41,39,48,45,46,37,40,39,41,41,46,37,40,48,50,49,54,50,56,58,52,49,42,41,51,30,42,20,40,42,45,37,40,39,37,34,44,34,37,31,30,27,29,27,26,24,21,30,32,35,36,35,38,37,37,32,34,36,34,35,31,39,28,34,36,42,32,39,30,42,31,33,30,28,27,30,27,32,27,26,33,34,32,26,30,28,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,4,0,2,6,5,4,4,5,4,3,0,3,3,5,7,6,8,6,4,4,5,5,6,6,5,7,6,9,3,5,8,5,5,7,7,8,7,9,9,10,10,10,7,9,9],"text":["date: 2020-05-13<br />cases:  9<br />type: death","date: 2020-05-14<br />cases: 10<br />type: death","date: 2020-05-15<br />cases:  9<br />type: death","date: 2020-05-16<br />cases: 10<br />type: death","date: 2020-05-17<br />cases: 10<br />type: death","date: 2020-05-18<br />cases:  8<br />type: death","date: 2020-05-19<br />cases:  9<br />type: death","date: 2020-05-20<br />cases: 10<br />type: death","date: 2020-05-21<br />cases: 12<br />type: death","date: 2020-05-22<br />cases: 13<br />type: death","date: 2020-05-23<br />cases: 15<br />type: death","date: 2020-05-24<br />cases: 11<br />type: death","date: 2020-05-25<br />cases:  9<br />type: death","date: 2020-05-26<br />cases: 12<br />type: death","date: 2020-05-27<br />cases: 14<br />type: death","date: 2020-05-28<br />cases: 16<br />type: death","date: 2020-05-29<br />cases: 17<br />type: death","date: 2020-05-30<br />cases: 22<br />type: death","date: 2020-05-31<br />cases: 23<br />type: death","date: 2020-06-01<br />cases: 22<br />type: death","date: 2020-06-02<br />cases: 24<br />type: death","date: 2020-06-03<br />cases: 30<br />type: death","date: 2020-06-04<br />cases: 32<br />type: death","date: 2020-06-05<br />cases: 31<br />type: death","date: 2020-06-06<br />cases: 34<br />type: death","date: 2020-06-07<br />cases: 36<br />type: death","date: 2020-06-08<br />cases: 34<br />type: death","date: 2020-06-09<br />cases: 37<br />type: death","date: 2020-06-10<br />cases: 36<br />type: death","date: 2020-06-11<br />cases: 38<br />type: death","date: 2020-06-12<br />cases: 36<br />type: death","date: 2020-06-13<br />cases: 39<br />type: death","date: 2020-06-14<br />cases: 40<br />type: death","date: 2020-06-15<br />cases: 39<br />type: death","date: 2020-06-16<br />cases: 41<br />type: death","date: 2020-06-17<br />cases: 39<br />type: death","date: 2020-06-18<br />cases: 48<br />type: death","date: 2020-06-19<br />cases: 45<br />type: death","date: 2020-06-20<br />cases: 46<br />type: death","date: 2020-06-21<br />cases: 37<br />type: death","date: 2020-06-22<br />cases: 40<br />type: death","date: 2020-06-23<br />cases: 39<br />type: death","date: 2020-06-24<br />cases: 41<br />type: death","date: 2020-06-25<br />cases: 41<br />type: death","date: 2020-06-26<br />cases: 46<br />type: death","date: 2020-06-27<br />cases: 37<br />type: death","date: 2020-06-28<br />cases: 40<br />type: death","date: 2020-06-29<br />cases: 48<br />type: death","date: 2020-06-30<br />cases: 50<br />type: death","date: 2020-07-01<br />cases: 49<br />type: death","date: 2020-07-02<br />cases: 54<br />type: death","date: 2020-07-03<br />cases: 50<br />type: death","date: 2020-07-04<br />cases: 56<br />type: death","date: 2020-07-05<br />cases: 58<br />type: death","date: 2020-07-06<br />cases: 52<br />type: death","date: 2020-07-07<br />cases: 49<br />type: death","date: 2020-07-08<br />cases: 42<br />type: death","date: 2020-07-09<br />cases: 41<br />type: death","date: 2020-07-10<br />cases: 51<br />type: death","date: 2020-07-11<br />cases: 30<br />type: death","date: 2020-07-12<br />cases: 42<br />type: death","date: 2020-07-13<br />cases: 20<br />type: death","date: 2020-07-14<br />cases: 40<br />type: death","date: 2020-07-15<br />cases: 42<br />type: death","date: 2020-07-16<br />cases: 45<br />type: death","date: 2020-07-17<br />cases: 37<br />type: death","date: 2020-07-18<br />cases: 40<br />type: death","date: 2020-07-19<br />cases: 39<br />type: death","date: 2020-07-20<br />cases: 37<br />type: death","date: 2020-07-21<br />cases: 34<br />type: death","date: 2020-07-22<br />cases: 44<br />type: death","date: 2020-07-23<br />cases: 34<br />type: death","date: 2020-07-24<br />cases: 37<br />type: death","date: 2020-07-25<br />cases: 31<br />type: death","date: 2020-07-26<br />cases: 30<br />type: death","date: 2020-07-27<br />cases: 27<br />type: death","date: 2020-07-28<br />cases: 29<br />type: death","date: 2020-07-29<br />cases: 27<br />type: death","date: 2020-07-30<br />cases: 26<br />type: death","date: 2020-07-31<br />cases: 24<br />type: death","date: 2020-08-01<br />cases: 21<br />type: death","date: 2020-08-02<br />cases: 30<br />type: death","date: 2020-08-03<br />cases: 32<br />type: death","date: 2020-08-04<br />cases: 35<br />type: death","date: 2020-08-05<br />cases: 36<br />type: death","date: 2020-08-06<br />cases: 35<br />type: death","date: 2020-08-07<br />cases: 38<br />type: death","date: 2020-08-08<br />cases: 37<br />type: death","date: 2020-08-09<br />cases: 37<br />type: death","date: 2020-08-10<br />cases: 32<br />type: death","date: 2020-08-11<br />cases: 34<br />type: death","date: 2020-08-12<br />cases: 36<br />type: death","date: 2020-08-13<br />cases: 34<br />type: death","date: 2020-08-14<br />cases: 35<br />type: death","date: 2020-08-15<br />cases: 31<br />type: death","date: 2020-08-16<br />cases: 39<br />type: death","date: 2020-08-17<br />cases: 28<br />type: death","date: 2020-08-18<br />cases: 34<br />type: death","date: 2020-08-19<br />cases: 36<br />type: death","date: 2020-08-20<br />cases: 42<br />type: death","date: 2020-08-21<br />cases: 32<br />type: death","date: 2020-08-22<br />cases: 39<br />type: death","date: 2020-08-23<br />cases: 30<br />type: death","date: 2020-08-24<br />cases: 42<br />type: death","date: 2020-08-25<br />cases: 31<br />type: death","date: 2020-08-26<br />cases: 33<br />type: death","date: 2020-08-27<br />cases: 30<br />type: death","date: 2020-08-28<br />cases: 28<br />type: death","date: 2020-08-29<br />cases: 27<br />type: death","date: 2020-08-30<br />cases: 30<br />type: death","date: 2020-08-31<br />cases: 27<br />type: death","date: 2020-09-01<br />cases: 32<br />type: death","date: 2020-09-02<br />cases: 27<br />type: death","date: 2020-09-03<br />cases: 26<br />type: death","date: 2020-09-04<br />cases: 33<br />type: death","date: 2020-09-05<br />cases: 34<br />type: death","date: 2020-09-06<br />cases: 32<br />type: death","date: 2020-09-07<br />cases: 26<br />type: death","date: 2020-09-08<br />cases: 30<br />type: death","date: 2020-09-09<br />cases: 28<br />type: death","date: 2020-09-10<br />cases: 24<br />type: death","date: 2020-01-22<br />cases:  0<br />type: death","date: 2020-01-23<br />cases:  0<br />type: death","date: 2020-01-24<br />cases:  0<br />type: death","date: 2020-01-25<br />cases:  0<br />type: death","date: 2020-01-26<br />cases:  0<br />type: death","date: 2020-01-27<br />cases:  0<br />type: death","date: 2020-01-28<br />cases:  0<br />type: death","date: 2020-01-29<br />cases:  0<br />type: death","date: 2020-01-30<br />cases:  0<br />type: death","date: 2020-01-31<br />cases:  0<br />type: death","date: 2020-02-01<br />cases:  0<br />type: death","date: 2020-02-02<br />cases:  0<br />type: death","date: 2020-02-03<br />cases:  0<br />type: death","date: 2020-02-04<br />cases:  0<br />type: death","date: 2020-02-05<br />cases:  0<br />type: death","date: 2020-02-06<br />cases:  0<br />type: death","date: 2020-02-07<br />cases:  0<br />type: death","date: 2020-02-08<br />cases:  0<br />type: death","date: 2020-02-09<br />cases:  0<br />type: death","date: 2020-02-10<br />cases:  0<br />type: death","date: 2020-02-11<br />cases:  0<br />type: death","date: 2020-02-12<br />cases:  0<br />type: death","date: 2020-02-13<br />cases:  0<br />type: death","date: 2020-02-14<br />cases:  0<br />type: death","date: 2020-02-15<br />cases:  0<br />type: death","date: 2020-02-16<br />cases:  0<br />type: death","date: 2020-02-17<br />cases:  0<br />type: death","date: 2020-02-18<br />cases:  0<br />type: death","date: 2020-02-19<br />cases:  0<br />type: death","date: 2020-02-20<br />cases:  0<br />type: death","date: 2020-02-21<br />cases:  0<br />type: death","date: 2020-02-22<br />cases:  0<br />type: death","date: 2020-02-23<br />cases:  0<br />type: death","date: 2020-02-24<br />cases:  0<br />type: death","date: 2020-02-25<br />cases:  0<br />type: death","date: 2020-02-26<br />cases:  0<br />type: death","date: 2020-02-27<br />cases:  0<br />type: death","date: 2020-02-28<br />cases:  0<br />type: death","date: 2020-02-29<br />cases:  0<br />type: death","date: 2020-03-01<br />cases:  0<br />type: death","date: 2020-03-02<br />cases:  0<br />type: death","date: 2020-03-03<br />cases:  0<br />type: death","date: 2020-03-04<br />cases:  0<br />type: death","date: 2020-03-05<br />cases:  0<br />type: death","date: 2020-03-06<br />cases:  0<br />type: death","date: 2020-03-07<br />cases:  0<br />type: death","date: 2020-03-08<br />cases:  0<br />type: death","date: 2020-03-09<br />cases:  0<br />type: death","date: 2020-03-10<br />cases:  0<br />type: death","date: 2020-03-11<br />cases:  0<br />type: death","date: 2020-03-12<br />cases:  0<br />type: death","date: 2020-03-13<br />cases:  0<br />type: death","date: 2020-03-14<br />cases:  0<br />type: death","date: 2020-03-15<br />cases:  0<br />type: death","date: 2020-03-16<br />cases:  0<br />type: death","date: 2020-03-17<br />cases:  0<br />type: death","date: 2020-03-18<br />cases:  0<br />type: death","date: 2020-03-19<br />cases:  0<br />type: death","date: 2020-03-20<br />cases:  0<br />type: death","date: 2020-03-21<br />cases:  0<br />type: death","date: 2020-03-22<br />cases:  0<br />type: death","date: 2020-03-23<br />cases:  0<br />type: death","date: 2020-03-24<br />cases:  1<br />type: death","date: 2020-03-25<br />cases:  1<br />type: death","date: 2020-03-26<br />cases:  1<br />type: death","date: 2020-03-27<br />cases:  0<br />type: death","date: 2020-03-28<br />cases:  1<br />type: death","date: 2020-03-29<br />cases:  4<br />type: death","date: 2020-03-30<br />cases:  0<br />type: death","date: 2020-03-31<br />cases:  2<br />type: death","date: 2020-04-01<br />cases:  6<br />type: death","date: 2020-04-02<br />cases:  5<br />type: death","date: 2020-04-03<br />cases:  4<br />type: death","date: 2020-04-04<br />cases:  4<br />type: death","date: 2020-04-05<br />cases:  5<br />type: death","date: 2020-04-06<br />cases:  4<br />type: death","date: 2020-04-07<br />cases:  3<br />type: death","date: 2020-04-08<br />cases:  0<br />type: death","date: 2020-04-09<br />cases:  3<br />type: death","date: 2020-04-10<br />cases:  3<br />type: death","date: 2020-04-11<br />cases:  5<br />type: death","date: 2020-04-12<br />cases:  7<br />type: death","date: 2020-04-13<br />cases:  6<br />type: death","date: 2020-04-14<br />cases:  8<br />type: death","date: 2020-04-15<br />cases:  6<br />type: death","date: 2020-04-16<br />cases:  4<br />type: death","date: 2020-04-17<br />cases:  4<br />type: death","date: 2020-04-18<br />cases:  5<br />type: death","date: 2020-04-19<br />cases:  5<br />type: death","date: 2020-04-20<br />cases:  6<br />type: death","date: 2020-04-21<br />cases:  6<br />type: death","date: 2020-04-22<br />cases:  5<br />type: death","date: 2020-04-23<br />cases:  7<br />type: death","date: 2020-04-24<br />cases:  6<br />type: death","date: 2020-04-25<br />cases:  9<br />type: death","date: 2020-04-26<br />cases:  3<br />type: death","date: 2020-04-27<br />cases:  5<br />type: death","date: 2020-04-28<br />cases:  8<br />type: death","date: 2020-04-29<br />cases:  5<br />type: death","date: 2020-04-30<br />cases:  5<br />type: death","date: 2020-05-01<br />cases:  7<br />type: death","date: 2020-05-02<br />cases:  7<br />type: death","date: 2020-05-03<br />cases:  8<br />type: death","date: 2020-05-04<br />cases:  7<br />type: death","date: 2020-05-05<br />cases:  9<br />type: death","date: 2020-05-06<br />cases:  9<br />type: death","date: 2020-05-07<br />cases: 10<br />type: death","date: 2020-05-08<br />cases: 10<br />type: death","date: 2020-05-09<br />cases: 10<br />type: death","date: 2020-05-10<br />cases:  7<br />type: death","date: 2020-05-11<br />cases:  9<br />type: death","date: 2020-05-12<br />cases:  9<br />type: death"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"death","legendgroup":"death","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.4063926940639,"r":7.30593607305936,"b":41.8264840182648,"l":37.2602739726027},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Fatality in Saudi Arabia","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18388.85,18524.15],"tickmode":"array","ticktext":["Jun-2020","Jul-2020","Aug-2020","Sep-2020"],"tickvals":[18414,18444,18475,18506],"categoryorder":"array","categoryarray":["Jun-2020","Jul-2020","Aug-2020","Sep-2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"date","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-2.9,60.9],"tickmode":"array","ticktext":["0","20","40","60"],"tickvals":[0,20,40,60],"categoryorder":"array","categoryarray":["0","20","40","60"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"cases","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"orientation":"h","x":0.3,"y":-0.2},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false,"displayModeBar":false},"source":"A","attrs":{"473c55112e12":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"473c55112e12","visdat":{"473c55112e12":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 2: The daily deaths in Saudi increased from April and reached a peak in July, after which case deaths began to decline through September despite the volatility
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:summary">Table 3: </span>The summary of COVID-19 cases in Saudi Arabia in 9 months, left with 19,533 active cases in the whole country
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Total Confirmed
+</th>
+<th style="text-align:right;">
+Total Death
+</th>
+<th style="text-align:right;">
+Total Recovered
+</th>
+<th style="text-align:right;">
+Active Cases
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+323720
+</td>
+<td style="text-align:right;">
+4189
+</td>
+<td style="text-align:right;">
+299998
+</td>
+<td style="text-align:right;">
+19533
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Until this data is recorded on September 10, in Table <a href="#tab:summary">3</a> there are total 323720 positive cases,<code>r summary$total_death</code> deaths, 299998 recovered, and<code>r summary$active_cases</code> active case.</p>
+<h2 id="test-performed">Test Performed</h2>
+<p>Given the relatively high cure rate with a low fatality, let us see how well Saudi Arabia has responded to this pandemic by looking at the number of tests it has conducted. Doing tests to identify the virus in a person is very important to help to trace clusters. Test data was performed downloaded from the Our World in Data website. <span class="citation" data-cites="owidcoronavirus">(<span class="citeproc-not-found" data-reference-id="owidcoronavirus"><strong>???</strong></span>)</span> This data contains the total number of tests performed. Figure <a href="#fig:test-1000"><strong>??</strong></a> shows the daily COVID-19 test per thousand people (The figures are given as a rolling 7-day average.)</p>
+<p>In general, the test performed has an increasing trend. The trend tests carried out increased significantly from May to July. After that, the trend experienced a period of fluctuation and increased again and reached a peak on August 16, with 1,880 daily tests per thousand people. As cases decreased, the test performed also decreased. Until the latest data on September 9, an estimate of 1.3 daily tests per thousand people has been carried out.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="post2_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
+</div>
+<h2 id="how-it-affected-saudi">How it affected Saudi?</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="post2_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
+<h1 id="acknowledgements">Acknowledgements</h1>
+<p>This blog post constructed by R package as following: - distill <span class="citation" data-cites="distill">Allaire, Iannone, and Xie (<a href="#ref-distill" role="doc-biblioref">2020</a>)</span> - tidyverse <span class="citation" data-cites="tidyverse2">Wickham et al. (<a href="#ref-tidyverse2" role="doc-biblioref">2019</a>)</span> - ggplot2 <span class="citation" data-cites="ggplot2">Wickham (<a href="#ref-ggplot2" role="doc-biblioref">2016</a>)</span> - knitr <span class="citation" data-cites="knitr">Xie (<a href="#ref-knitr" role="doc-biblioref">2020</a>)</span> - kableExtra <span class="citation" data-cites="kableExtra">Zhu (<a href="#ref-kableExtra" role="doc-biblioref">2019</a>)</span> - lubridate <span class="citation" data-cites="lubridate">Grolemund and Wickham (<a href="#ref-lubridate" role="doc-biblioref">2011</a>)</span> - DT <span class="citation" data-cites="DT">Xie, Cheng, and Tan (<a href="#ref-DT" role="doc-biblioref">2020</a>)</span> - htmltools <span class="citation" data-cites="htmltools">Cheng et al. (<a href="#ref-htmltools" role="doc-biblioref">2020</a>)</span> - plotly <span class="citation" data-cites="plotly">Sievert (<a href="#ref-plotly" role="doc-biblioref">2020</a>)</span> - gt <span class="citation" data-cites="gt">Iannone, Cheng, and Schloerke (<a href="#ref-gt" role="doc-biblioref">2020</a>)</span></p>
+<div id="refs" class="references" role="doc-bibliography">
+<div id="ref-distill">
+<p>Allaire, JJ, Rich Iannone, and Yihui Xie. 2020. <em>Distill: ’R Markdown’ Format for Scientific and Technical Writing</em>. <a href="https://CRAN.R-project.org/package=distill">https://CRAN.R-project.org/package=distill</a>.</p>
+</div>
+<div id="ref-htmltools">
+<p>Cheng, Joe, Carson Sievert, Winston Chang, Yihui Xie, and Jeff Allen. 2020. <em>Htmltools: Tools for Html</em>. <a href="https://CRAN.R-project.org/package=htmltools">https://CRAN.R-project.org/package=htmltools</a>.</p>
+</div>
+<div id="ref-tidycovid19">
+<p>Gassen, Joachim. 2020. <em>Tidycovid19: Download, Tidy and Visualize Covid-19 Related Data</em>.</p>
+</div>
+<div id="ref-lubridate">
+<p>Grolemund, Garrett, and Hadley Wickham. 2011. “Dates and Times Made Easy with lubridate.” <em>Journal of Statistical Software</em> 40 (3): 1–25. <a href="http://www.jstatsoft.org/v40/i03/">http://www.jstatsoft.org/v40/i03/</a>.</p>
+</div>
+<div id="ref-gt">
+<p>Iannone, Richard, Joe Cheng, and Barret Schloerke. 2020. <em>Gt: Easily Create Presentation-Ready Display Tables</em>. <a href="https://CRAN.R-project.org/package=gt">https://CRAN.R-project.org/package=gt</a>.</p>
+</div>
+<div id="ref-corona">
+<p>Krispin, Rami, and Jarrett Byrnes. 2020. <em>Coronavirus: The 2019 Novel Coronavirus Covid-19 (2019-nCoV) Dataset</em>. <a href="https://github.com/RamiKrispin/coronavirus">https://github.com/RamiKrispin/coronavirus</a>.</p>
+</div>
+<div id="ref-plotly">
+<p>Sievert, Carson. 2020. <em>Interactive Web-Based Data Visualization with R, Plotly, and Shiny</em>. Chapman; Hall/CRC. <a href="https://plotly-r.com">https://plotly-r.com</a>.</p>
+</div>
+<div id="ref-ggplot2">
+<p>Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.</p>
+</div>
+<div id="ref-tidyverse2">
+<p>Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the tidyverse.” <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.</p>
+</div>
+<div id="ref-knitr">
+<p>Xie, Yihui. 2020. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.</p>
+</div>
+<div id="ref-DT">
+<p>Xie, Yihui, Joe Cheng, and Xianying Tan. 2020. <em>DT: A Wrapper of the Javascript Library ’Datatables’</em>. <a href="https://CRAN.R-project.org/package=DT">https://CRAN.R-project.org/package=DT</a>.</p>
+</div>
+<div id="ref-kableExtra">
+<p>Zhu, Hao. 2019. <em>KableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.</p>
+</div>
+</div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<script id="distill-bibliography" type="text/bibtex">
+@Manual{corona,
+    title = {coronavirus: The 2019 Novel Coronavirus COVID-19 (2019-nCoV) Dataset},
+    author = {Rami Krispin and Jarrett Byrnes},
+    year = {2020},
+    note = {R package version 0.3.0.9000},
+    url = {https://github.com/RamiKrispin/coronavirus},
+  }
+  
+ @Manual{tidycovid19,
+    title = {tidycovid19: Download, Tidy and Visualize Covid-19 Related Data},
+    author = {Joachim Gassen},
+    year = {2020},
+    note = {R package version 0.0.0.9000},
+  }
+
+  
+@Manual{kableExtra,
+    title = {kableExtra: Construct Complex Table with 'kable' and Pipe Syntax},
+    author = {Hao Zhu},
+    year = {2019},
+    note = {R package version 1.1.0},
+    url = {https://CRAN.R-project.org/package=kableExtra},
+  }
+  
+@misc{karaalp_iraq_2020,
+	title = {Iraq confirms first case of coronavirus},
+	url = {https://www.aa.com.tr/en/latest-on-coronavirus-outbreak/iraq-confirms-first-case-of-coronavirus/1743255},
+	abstract = {Iranian student tested positive for novel coronavirus in city of Najaf, says government official - Anadolu Agency},
+	urldate = {2020-09-01},
+	author = {Karaalp, Haydar},
+	month = feb,
+	year = {2020}
+}
+
+ @Manual{distill,
+    title = {distill: 'R Markdown' Format for Scientific and Technical Writing},
+    author = {JJ Allaire and Rich Iannone and Yihui Xie},
+    year = {2020},
+    note = {R package version 0.8},
+    url = {https://CRAN.R-project.org/package=distill},
+  }
+
+@Article{tidyverse2,
+    title = {Welcome to the {tidyverse}},
+    author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain FranÃ§ois and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill MÃ¼ller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},
+    year = {2019},
+    journal = {Journal of Open Source Software},
+    volume = {4},
+    number = {43},
+    pages = {1686},
+    doi = {10.21105/joss.01686},
+  }
+  
+    @Book{ggplot2,
+    author = {Hadley Wickham},
+    title = {ggplot2: Elegant Graphics for Data Analysis},
+    publisher = {Springer-Verlag New York},
+    year = {2016},
+    isbn = {978-3-319-24277-4},
+    url = {https://ggplot2.tidyverse.org},
+  }
+  
+   @Manual{knitr,
+    title = {knitr: A General-Purpose Package for Dynamic Report
+      Generation in R},
+    author = {Yihui Xie},
+    year = {2020},
+    note = {R package version 1.29},
+    url = {https://yihui.org/knitr/},
+  }
+  
+   @Article{lubridate,
+    title = {Dates and Times Made Easy with {lubridate}},
+    author = {Garrett Grolemund and Hadley Wickham},
+    journal = {Journal of Statistical Software},
+    year = {2011},
+    volume = {40},
+    number = {3},
+    pages = {1--25},
+    url = {http://www.jstatsoft.org/v40/i03/},
+  }
+  
+   @Manual{DT,
+    title = {DT: A Wrapper of the JavaScript Library 'DataTables'},
+    author = {Yihui Xie and Joe Cheng and Xianying Tan},
+    year = {2020},
+    note = {R package version 0.15},
+    url = {https://CRAN.R-project.org/package=DT},
+  }
+  
+    @Manual{htmltools,
+    title = {htmltools: Tools for HTML},
+    author = {Joe Cheng and Carson Sievert and Winston Chang and Yihui Xie and Jeff Allen},
+    year = {2020},
+    note = {R package version 0.5.0},
+    url = {https://CRAN.R-project.org/package=htmltools},
+  }
+
+
+   @Book{plotly,
+    author = {Carson Sievert},
+    title = {Interactive Web-Based Data Visualization with R, plotly, and shiny},
+    publisher = {Chapman and Hall/CRC},
+    year = {2020},
+    isbn = {9781138331457},
+    url = {https://plotly-r.com},
+  }
+
+  @Manual{gt,
+    title = {gt: Easily Create Presentation-Ready Display Tables},
+    author = {Richard Iannone and Joe Cheng and Barret Schloerke},
+    year = {2020},
+    note = {R package version 0.2.2},
+    url = {https://CRAN.R-project.org/package=gt},
+  }
+</script>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
