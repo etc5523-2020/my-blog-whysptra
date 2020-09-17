@@ -138,7 +138,7 @@ kable(caption = "The summary of COVID-19 cases in Saudi Arabia in 9 months, left
   kable_styling("hover")
 ```
 
-Until this data is recorded on September 10, in Table \@ref(tab:summary) there are total `r summary$total_confirmed` positive cases,` r summary$total_death` deaths, `r summary$total_recovered` recovered, and` r summary$active_cases` active case.
+Until this data is recorded on September 10, in Table \@ref(tab:summary) there are total `r summary$total_confirmed` positive cases,`r summary$total_death` deaths, `r summary$total_recovered` recovered, and `r summary$active_cases` active case.
 
 ## Test Performed
 
