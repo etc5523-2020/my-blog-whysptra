@@ -13,8 +13,13 @@ output:
 bibliography: references.bib
 ---
 
+<style>
+body {
+text-align: justify}
+</style>
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, options(scipen=999))
+knitr::opts_chunk$set(echo = FALSE, fig.pos = "center", options(scipen=999))
 ```
 
 ```{r, include=FALSE, warning=FALSE, message=FALSE}
@@ -28,12 +33,11 @@ library(htmltools)
 library(plotly)
 library(tidycovid19)
 library(scales)
+library(patchwork)
 ```
 
 
 ```{r, include=FALSE}
-#load coronavirus dataset
-data("coronavirus")
 saudi <- coronavirus %>% 
   filter(country=="Saudi Arabia", date <= "2020-09-10") %>%
   select(-province)
@@ -64,7 +68,7 @@ tibble(variables_1,class_1,desc_1) %>%
   kable_styling(bootstrap_options = "hover")
 ```
 
-To make comparisons, the package from `tidycovid19` is also used in this report. @tidycovid19 This package has more variables because it is a combination of several other dataset sources, including the Our World in Data. The dataset contains a tidy format of the testing data over time. The variables from Our World in Data listed below in Table \@ref(tab:tidycovid-tbl).
+The package from `tidycovid19` is also used in this report. @tidycovid19 This package has more variables because it is a combination of several other dataset sources, including the Our World in Data. The dataset contains a tidy format of the testing data over time. The variables from Our World in Data listed below in Table \@ref(tab:tidycovid-tbl).
 
 ```{r tidycovid-tbl}
 tibble(variables_2,class_2,desc_2) %>%
@@ -76,13 +80,9 @@ tibble(variables_2,class_2,desc_2) %>%
 
 ## When was the first cases and how the trend overtime ?
 
-AA reported, the first case of coronavirus in Saudi Arabia occurred on March 2, 2020, where a citizen was allegedly coming from Iran via Bahrain. @anodolu In the following three days, the second case was reported as many as 4 cases at once. In less than two weeks since the first reported case, the total number of cases has increased by almost six times higher. This trend continued to increase daily, reaching a peak on May 16 with daily cases of 2870. After that cases started to decline for almost two weeks recording 1581 cases a day on May 29. Cases have risen sharply since then, hitting a record high of 4919 cases per day on June 17. After reaching the peak, the curve trend began to decline, although it fluctuated at the beginning of July. From the latest data collected on September 9, cases per day have reached 708 cases per day.
+AA reported, the first case of coronavirus in Saudi Arabia occurred on March 2, 2020, where a citizen was allegedly coming from Iran via Bahrain. @duz_saudi_2020 In the following three days, the second case was reported as many as 4 cases at once. In less than two weeks since the first reported case, the total number of cases has increased by almost six times higher. This trend continued to increase daily, reaching a peak on May 16 with daily cases of 2870. After that cases started to decline for almost two weeks recording 1581 cases a day on May 29. Cases have risen sharply since then, hitting a record high of 4919 cases per day on June 17. After reaching the peak, the curve trend began to decline, although it fluctuated at the beginning of July. From the latest data collected on September 9, cases per day have reached 708 cases per day.
 
-We provide a plot showing the fatality trend in Saudi Arabia in Figure xx. The first reported death cases caused by the coronavirus occurred 20 days after the first case was reported where the victim was a 51-year-old Afghan resident @aljazeera Trend fatality increased after that to reach a peak of 58 deaths a day on July 5. After that, the trend of mortality began to decline even though it was fluctuating.
-
-Apart from positive cases and deaths, Saudi Arabia is showing an increasing trend in patient recovery. The trend increased from the end of April and had decreased in June. Patient recovery per day tends to increase despite the fluctuation and peaked on July 14. On that date, 7718 people were recorded as recovered from the coronavirus. As the number of positive cases decreased, the number of recovered patients also decreased.AA reported, the first case of coronavirus in Saudi Arabia occurred on March 2, 2020, where a citizen was allegedly coming from Iran via Bahrain. @anodolu In the following three days, the second case was reported as many as 4 cases at once. In less than two weeks since the first reported case, the total number of cases has increased by almost six times higher. This trend continued to increase daily, reaching a peak on May 16 with daily cases of 2870. After that cases started to decline for almost two weeks recording 1581 cases a day on May 29. Cases have risen sharply since then, hitting a record high of 4919 cases per day on June 17. After reaching the peak, the curve trend began to decline, although it fluctuated at the beginning of July. From the latest data collected on September 9, cases per day have reached 708 cases per day.
-
-We provide a plot showing the fatality trend in Saudi Arabia in Figure xx. The first reported death cases caused by the coronavirus occurred 20 days after the first case was reported where the victim was a 51-year-old Afghan resident @aljazeera Trend fatality increased after that to reach a peak of 58 deaths a day on July 5. After that, the trend of mortality began to decline even though it was fluctuating.
+We provide a plot showing the fatality trend in Saudi Arabia in Figure xx. The first reported death cases caused by the coronavirus occurred 20 days after the first case was reported where the victim was a 51-year-old Afghan resident @aljazeera_saudi_2020 Trend fatality increased after that to reach a peak of 58 deaths a day on July 5. After that, the trend of mortality began to decline even though it was fluctuating.
 
 Apart from positive cases and deaths, Saudi Arabia is showing an increasing trend in patient recovery. The trend increased from the end of April and had decreased in June. Patient recovery per day tends to increase despite the fluctuation and peaked on July 14. On that date, 7718 people were recorded as recovered from the coronavirus. As the number of positive cases decreased, the number of recovered patients also decreased.
 
@@ -93,6 +93,7 @@ plot <- saudi %>%
              y=cases,
              color=type)) +
   geom_line() +
+  scale_color_manual(values=c("#FF9933","#FF6666", "#00CCCC"))+
   theme_minimal() +
   theme(legend.position = "bottom") +
   ggtitle("Daily cases in Saudi Arabia")  +
@@ -141,16 +142,18 @@ Until this data is recorded on September 10, in Table \@ref(tab:summary) there a
 
 ## Test Performed
 
-Given the relatively high cure rate with a low fatality, let us see how well Saudi Arabia has responded to this pandemic by looking at the number of tests it has conducted. Doing tests to identify the virus in a person is very important to help to trace clusters. Test data was performed downloaded from the Our World in Data website. @owidcoronavirus This data contains the total number of tests performed. Figure \@ref(fig:test-1000) shows the daily COVID-19 test per thousand people (The figures are given as a rolling 7-day average.)
+Given the relatively high cure rate with a low fatality, let us see how well Saudi Arabia has responded to this pandemic by looking at the number of tests it has conducted. Doing tests to identify the virus in a person is very important to help to trace clusters. Test data was performed downloaded from the Our World in Data website. @owidcoronavirus This data contains the total number of tests performed. Figure \@ref(fig:test-1000) (A) shows the daily COVID-19 test per thousand people (The figures are given as a rolling 7-day average.)
 
 In general, the test performed has an increasing trend. The trend tests carried out increased significantly from May to July. After that, the trend experienced a period of fluctuation and increased again and reached a peak on August 16, with 1,880 daily tests per thousand people. As cases decreased, the test performed also decreased. Until the latest data on September 9, an estimate of 1.3 daily tests per thousand people has been carried out.
+
+While in (B) shows the cumulative total test carried out by the Saudi Arabian government. It can be seen that the tests carried out are increasing every day, according to the trend in Figure (A). However, if we pay attention, there are several empty days, around May, June, and August. We speculate some of these blank data to be recorded on the following day.
 
 ```{r test,  fig.show="hold", out.width="50%"}
 plot_test1000 <- saudi_test_per1000 %>%
   ggplot(aes(x=Date,
              y=new_tests_per_thousand_7day_smoothed))+
-  geom_point(color="blue")+
-  geom_line()+
+  geom_point(color="#009999")+
+  geom_line(color="#009999")+
   theme_minimal()+
   ylab("Test per 1000 People") +
   xlab("") +
@@ -165,7 +168,7 @@ plot_test1000 <- saudi_test_per1000 %>%
 plot_total_test <- saudi_test %>%
   ggplot(aes(x=date,
              y=total_tests)) +
-  geom_col(width = 0.259,color="blue")+
+  geom_col(width = 0.259,color="#009999")+
   theme_minimal() +
   ylab("Total Test")+
   xlab("Date") +
@@ -179,21 +182,37 @@ plot_total_test <- saudi_test %>%
                  limits = as.Date(c('2020-05-13','2020-09-13')))
 ```
 
-```{r}
-library(patchwork)
+```{r test-1000, fig.cap="Graph about testing performance in Saudi Arabia. (A) The daily test performed per thousand people has a raising in trend, (B) By cummulative, Saudi Arabia reached almost six million testing"}
 plot_test1000 + plot_total_test + plot_layout(nrow=2, guides = "collect")
 ```
 
 
-## How it affected Saudi?
+## How it affected the Kingdom of Saudi Arabia?
 
-```{r}
+Saudi Arabia is a place for Muslims to perform Umrah and Hajj. Reported by the BBC, "The annual Hajj pilgrimage performed by Muslims from around the world has begun in Saudi Arabia, dramatically scaled back because of coronavirus." @bbc_coronavirus
+This is a result of the prohibition for international pilgrims to come to Saudi Arabia in order to reduce the spread of the pandemic. @bbc_coronavirus
+
+```{r, fig.cap="Hundreds of Muslim pilgrims circle the Kaaba, the cubic building at the Grand Mosque, as they keep social destination to protect themselves against the coronavirus ahead of the Hajj pilgrimage in the Muslim holy city of Mecca, Saudi Arabia, Wednesday, July 29, 2020. Source : Saudi Media Ministry via AP"}
+library(png)
+img <- readPNG("hajj.png")
+grid::grid.raster(img)
+```
+
+
+Based on data released by the General Authority for Statistics Saudi Arabia that was compiled by Kapsarc @kapsarc_number_nodate the number of international pilgrims in the last seven years has exceeded pilgrims from within the country. In Figure \@ref(fig:hajj) there is a significant increase in the total number of pilgrims because there is an increase in the arrival of pilgrims from international in the last three years. The highest total was reached last year, with nearly 2.5 million pilgrims. With this pandemic, the number of pilgrims will experience a very significant decline. Reported by Aljazeera, "Saudi Arabia says it will allow only about 1,000 pilgrims residing in the kingdom to perform the Hajj this year" @bbc_coronavirus
+
+
+```{r hajj, fig.cap="Pilgrim in seven years was dominated by foreign pilgrims and it increasing for the last three year while the domestic resident terkesan datar"}
 hajj <- read_csv2("domestic-and-foreign-pilgrims.csv")
-hajj %>% filter(Year>2010) %>%
+hajj %>% filter(Year>2012) %>%
   ggplot(aes(x=Year,
          y=`Number of Pilgrims`,
          fill=`Domestic/Foreign Pilgrim`))+
-  geom_col(position = "dodge")
+  geom_col(position = "dodge")+
+  scale_fill_brewer(palette="Pastel1")+
+  theme_minimal() +
+  theme(legend.position = "bottom")
+  
 ```
 
 
@@ -201,15 +220,15 @@ hajj %>% filter(Year>2010) %>%
 
 # Acknowledgements
 
-This blog post constructed by R package as following:
+This blog post constructed by R functions from packages as following:
 - distill @distill
 - tidyverse @tidyverse2
 - ggplot2 @ggplot2
 - knitr @knitr
 - kableExtra @kableExtra
 - lubridate @lubridate
-- DT @DT
 - htmltools @htmltools
 - plotly @plotly
-- gt @gt
-
+- scales @scales
+- patchwork @patchwork
+- png @png

@@ -1,5 +1,21 @@
 [
   {
+    "path": "posts/post2/",
+    "title": "COVID-19 in Saudi Arabia",
+    "description": "The coronavirus hit the Kingdom of Saudi Arabia\nWhen was the first cases? How it affect the Middle East country?",
+    "author": [
+      {
+        "name": "Putu Wahyu Saputra",
+        "url": {}
+      }
+    ],
+    "date": "2020-09-14",
+    "categories": [],
+    "preview": "posts/post2/post2_files/figure-html5/test-1000-1.png",
+    "last_modified": "2020-09-17T18:58:00+10:00",
+    "input_file": "post2.utf8.md"
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to My ETC5523 Blog",
     "description": "Welcome to ETC5523 Blog. I hope you enjoy \nreading the content that provided!",
