@@ -16,6 +16,22 @@
     "input_file": "post2.utf8.md"
   },
   {
+    "path": "posts/post3/",
+    "title": "COVID-19 Shiny Application",
+    "description": "App review and points of improvement or additions that plausible.",
+    "author": [
+      {
+        "name": "Putu Wahyu Saputra",
+        "url": {}
+      }
+    ],
+    "date": "2020-09-14",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2020-10-12T12:44:54+08:00",
+    "input_file": "post3.utf8.md"
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to My ETC5523 Blog",
     "description": "Welcome to ETC5523 Blog. I hope you enjoy \nreading the content that provided!",
