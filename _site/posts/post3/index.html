@@ -43,17 +43,12 @@
 
 <!--/radix_placeholder_meta_tags-->
   
-  <meta name="citation_reference" content="citation_title=KableExtra: Construct complex table with â€™kableâ€™ and pipe syntax;citation_publication_date=2019;citation_author=Hao Zhu"/>
   <meta name="citation_reference" content="citation_title=Distill: â€™R markdownâ€™ format for scientific and technical writing;citation_publication_date=2020;citation_author=JJ Allaire;citation_author=Rich Iannone;citation_author=Yihui Xie"/>
   <meta name="citation_reference" content="citation_title=Welcome to the &lt;span class=&quot;nocase&quot;&gt;tidyverse&lt;/span&gt;;citation_publication_date=2019;citation_volume=4;citation_doi=10.21105/joss.01686;citation_author=Hadley Wickham;citation_author=Mara Averick;citation_author=Jennifer Bryan;citation_author=Winston Chang;citation_author=Lucy Dâ€™Agostino McGowan;citation_author=Romain FranÃ§ois;citation_author=Garrett Grolemund;citation_author=Alex Hayes;citation_author=Lionel Henry;citation_author=Jim Hester;citation_author=Max Kuhn;citation_author=Thomas Lin Pedersen;citation_author=Evan Miller;citation_author=Stephan Milton Bache;citation_author=Kirill MÃ¼ller;citation_author=Jeroen Ooms;citation_author=David Robinson;citation_author=Dana Paige Seidel;citation_author=Vitalie Spinu;citation_author=Kohske Takahashi;citation_author=Davis Vaughan;citation_author=Claus Wilke;citation_author=Kara Woo;citation_author=Hiroaki Yutani"/>
   <meta name="citation_reference" content="citation_title=Ggplot2: Elegant graphics for data analysis;citation_publication_date=2016;citation_publisher=Springer-Verlag New York;citation_author=Hadley Wickham"/>
-  <meta name="citation_reference" content="citation_title=Knitr: A general-purpose package for dynamic report generation in r;citation_publication_date=2020;citation_author=Yihui Xie"/>
   <meta name="citation_reference" content="citation_title=Dates and times made easy with &lt;span class=&quot;nocase&quot;&gt;lubridate&lt;/span&gt;;citation_publication_date=2011;citation_volume=40;citation_author=Garrett Grolemund;citation_author=Hadley Wickham"/>
   <meta name="citation_reference" content="citation_title=Htmltools: Tools for html;citation_publication_date=2020;citation_author=Joe Cheng;citation_author=Carson Sievert;citation_author=Winston Chang;citation_author=Yihui Xie;citation_author=Jeff Allen"/>
   <meta name="citation_reference" content="citation_title=Interactive web-based data visualization with r, plotly, and shiny;citation_publication_date=2020;citation_publisher=Chapman; Hall/CRC;citation_author=Carson Sievert"/>
-  <meta name="citation_reference" content="citation_title=Scales: Scale functions for visualization;citation_publication_date=2020;citation_author=Hadley Wickham;citation_author=Dana Seidel"/>
-  <meta name="citation_reference" content="citation_title=Patchwork: The composer of plots;citation_publication_date=2020;citation_author=Thomas Lin Pedersen"/>
-  <meta name="citation_reference" content="citation_title=Png: Read and write png images;citation_publication_date=2013;citation_author=Simon Urbanek"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
@@ -1340,7 +1335,9 @@ body {
 text-align: justify}
 </style>
 <h1 id="the-covid-19-shiny-app">The Covid-19 Shiny app</h1>
-<p>An application to explore the development of coronavirus in South East Asia countries. There are two graph in this application. In the continent tab, you can see the graph for daily cases in all South East Asia In the countries tab, there are graph for every representative country in South East Asia.</p>
+<p>An application to explore the development of coronavirus in South East Asia countries. There are two graph in this application. You can check the apps from this link.</p>
+<p><a href="https://github.com/etc5523-2020/shiny-assessment-whysptra">Covid Shiny app on GithUb</a></p>
+<p>In the continent tab, you can see the graph for daily cases in all South East Asia In the countries tab, there are graph for every representative country in South East Asia.</p>
 <p>Both graph represented by the day, countries, type of cases, and number of each representative cases.</p>
 <p>Data sources : All the data comes from <a href="https://github.com/RamiKrispin/coronavirus"><code>coronavirus</code></a> dataset from CRAN.</p>
 <h3 id="tab-continent">Tab : Continent</h3>
@@ -1353,9 +1350,12 @@ text-align: justify}
 <p>In this tab, there is a line graph showing the progress of cases in one country. On the x-axis it shows the date, while on the y-axis it shows the number of cases. Each line represents the type of case (confirmed, death, and recovered). The features available on the sidebar are: - Country selection: contains ten countries which can only be selected once. - Interactive Table: shows the country’s daily case data. The table will change according to the country selection. - ValueBox shows the total of each case and active cases according to the Country selection.</p>
 <p>This section can be used to compare the number of all cases in a country.</p>
 <h1 id="self-review">Self Review</h1>
-<p>– What did you do well? – What are the points you can improve on? – What are some things that you’d like to add that’s plausible? – What are some things that you’d like to add that cannot be done yet due to limitation in data or technology?</p>
+<p>– What did you do well? &gt; This application can show comparisons of cases in each country as well as comparisons of other countries. The addition of interactive features such as the Date Range and Case type button allows users to explore further the development of the coronavirus case. I chose a theme from shinydashboardtheme because it has a complete and attractive theme library. Using plotly without limitation Bar Mode makes users focus more on the graphic without display clutter. In my opinion, the addition of the ValueBox feature helps users to get instant summaries when viewing charts with the input they want. Using interactive tables also allows users to find a case on a particular day with the filter or search feature. In essence, this application focuses on the goal of displaying the development of coronavirus data in Southeast Asia with an attractive, simple, and easy to use appearance.</p>
+<p>– What are the points you can improve on? &gt; Some of the things I can improve from this application are: &gt; From the graph on the continents tab, there is data hover and click data based on event_data (plotly_hover &amp; plotly_click). In this feature, it displays data when plotly was hovered and clicked at a particular point. However, the data only shows the date and number of cases on that date. The improvement that can be done by adding information on the country where the cases occurred so that it makes it more evident for users to get the information.</p>
+<p>– What are some things that you’d like to add that’s plausible? &gt; Adding a choropleth map from Southeast Asia can be an additional feature to see the visualization of total cases in each country. &gt; Whether only displays hover and click in text form, and it will be more informative if it shows a table of the data in question, complete with country, date, type of case, and the number of cases on that day. &gt; Need to add Active cases value box to the continents tab to be similar to the Countries tab.</p>
+<p>– What are some things that you’d like to add that cannot be done yet due to limitation in data or technology? &gt; I would like to add an option of the number of daily tests for each country. Thus, it can show a correlation between the number of tests performed and the rate at which a country detects cases. &gt; Since the dataset does not contain the profiles of each patient, it would be exciting to have data on the age of each patient so that I can make a comparison chart of the age groups from children to adults from each country.</p>
 <h1 id="acknowledgements">Acknowledgements</h1>
-<p>This blog post constructed by R functions from packages as following: - distill <span class="citation" data-cites="distill">Allaire, Iannone, and Xie (<a href="#ref-distill" role="doc-biblioref">2020</a>)</span> - tidyverse <span class="citation" data-cites="tidyverse2">Wickham et al. (<a href="#ref-tidyverse2" role="doc-biblioref">2019</a>)</span> - ggplot2 <span class="citation" data-cites="ggplot2">Wickham (<a href="#ref-ggplot2" role="doc-biblioref">2016</a>)</span> - knitr <span class="citation" data-cites="knitr">Xie (<a href="#ref-knitr" role="doc-biblioref">2020</a>)</span> - kableExtra <span class="citation" data-cites="kableExtra">Zhu (<a href="#ref-kableExtra" role="doc-biblioref">2019</a>)</span> - lubridate <span class="citation" data-cites="lubridate">Grolemund and Wickham (<a href="#ref-lubridate" role="doc-biblioref">2011</a>)</span> - htmltools <span class="citation" data-cites="htmltools">Cheng et al. (<a href="#ref-htmltools" role="doc-biblioref">2020</a>)</span> - plotly <span class="citation" data-cites="plotly">Sievert (<a href="#ref-plotly" role="doc-biblioref">2020</a>)</span> - scales <span class="citation" data-cites="scales">Wickham and Seidel (<a href="#ref-scales" role="doc-biblioref">2020</a>)</span> - patchwork <span class="citation" data-cites="patchwork">Pedersen (<a href="#ref-patchwork" role="doc-biblioref">2020</a>)</span> - png <span class="citation" data-cites="png">Urbanek (<a href="#ref-png" role="doc-biblioref">2013</a>)</span></p>
+<p>This blog post constructed by R functions from packages as following: - distill <span class="citation" data-cites="distill">Allaire, Iannone, and Xie (<a href="#ref-distill" role="doc-biblioref">2020</a>)</span> - tidyverse <span class="citation" data-cites="tidyverse2">Wickham et al. (<a href="#ref-tidyverse2" role="doc-biblioref">2019</a>)</span> - ggplot2 <span class="citation" data-cites="ggplot2">Wickham (<a href="#ref-ggplot2" role="doc-biblioref">2016</a>)</span> - lubridate <span class="citation" data-cites="lubridate">Grolemund and Wickham (<a href="#ref-lubridate" role="doc-biblioref">2011</a>)</span> - htmltools <span class="citation" data-cites="htmltools">Cheng et al. (<a href="#ref-htmltools" role="doc-biblioref">2020</a>)</span> - plotly <span class="citation" data-cites="plotly">Sievert (<a href="#ref-plotly" role="doc-biblioref">2020</a>)</span></p>
 <div id="refs" class="references" role="doc-bibliography">
 <div id="ref-distill">
 <p>Allaire, JJ, Rich Iannone, and Yihui Xie. 2020. <em>Distill: ’R Markdown’ Format for Scientific and Technical Writing</em>. <a href="https://CRAN.R-project.org/package=distill">https://CRAN.R-project.org/package=distill</a>.</p>
@@ -1366,29 +1366,14 @@ text-align: justify}
 <div id="ref-lubridate">
 <p>Grolemund, Garrett, and Hadley Wickham. 2011. “Dates and Times Made Easy with lubridate.” <em>Journal of Statistical Software</em> 40 (3): 1–25. <a href="http://www.jstatsoft.org/v40/i03/">http://www.jstatsoft.org/v40/i03/</a>.</p>
 </div>
-<div id="ref-patchwork">
-<p>Pedersen, Thomas Lin. 2020. <em>Patchwork: The Composer of Plots</em>. <a href="https://CRAN.R-project.org/package=patchwork">https://CRAN.R-project.org/package=patchwork</a>.</p>
-</div>
 <div id="ref-plotly">
 <p>Sievert, Carson. 2020. <em>Interactive Web-Based Data Visualization with R, Plotly, and Shiny</em>. Chapman; Hall/CRC. <a href="https://plotly-r.com">https://plotly-r.com</a>.</p>
-</div>
-<div id="ref-png">
-<p>Urbanek, Simon. 2013. <em>Png: Read and Write Png Images</em>. <a href="https://CRAN.R-project.org/package=png">https://CRAN.R-project.org/package=png</a>.</p>
 </div>
 <div id="ref-ggplot2">
 <p>Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.</p>
 </div>
 <div id="ref-tidyverse2">
 <p>Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the tidyverse.” <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.</p>
-</div>
-<div id="ref-scales">
-<p>Wickham, Hadley, and Dana Seidel. 2020. <em>Scales: Scale Functions for Visualization</em>. <a href="https://CRAN.R-project.org/package=scales">https://CRAN.R-project.org/package=scales</a>.</p>
-</div>
-<div id="ref-knitr">
-<p>Xie, Yihui. 2020. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.</p>
-</div>
-<div id="ref-kableExtra">
-<p>Zhu, Hao. 2019. <em>KableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.</p>
 </div>
 </div>
 <!--radix_placeholder_article_footer-->
