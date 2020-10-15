@@ -1,5 +1,21 @@
 [
   {
+    "path": "posts/post3/",
+    "title": "COVID-19 Shiny Application",
+    "description": "App review and points of improvement or additions that plausible.",
+    "author": [
+      {
+        "name": "Putu Wahyu Saputra",
+        "url": {}
+      }
+    ],
+    "date": "2020-10-15",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2020-10-15T19:40:11+08:00",
+    "input_file": "post3.utf8.md"
+  },
+  {
     "path": "posts/post2/",
     "title": "COVID-19 in Saudi Arabia",
     "description": "The coronavirus hit the Kingdom of Saudi Arabia\nWhen was the first cases? How it affect the Middle East country?",
@@ -14,22 +30,6 @@
     "preview": "posts/post2/post2_files/figure-html5/test-1000-1.png",
     "last_modified": "2020-09-17T19:05:19+10:00",
     "input_file": "post2.utf8.md"
-  },
-  {
-    "path": "posts/post3/",
-    "title": "COVID-19 Shiny Application",
-    "description": "App review and points of improvement or additions that plausible.",
-    "author": [
-      {
-        "name": "Putu Wahyu Saputra",
-        "url": {}
-      }
-    ],
-    "date": "2020-09-14",
-    "categories": [],
-    "preview": {},
-    "last_modified": "2020-10-13T21:45:23+08:00",
-    "input_file": "post3.utf8.md"
   },
   {
     "path": "posts/welcome/",
