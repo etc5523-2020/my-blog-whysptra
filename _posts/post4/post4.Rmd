@@ -1,0 +1,101 @@
+---
+title: "Let's review an R package"
+description: |
+  Peer review is a useful tool to both receive feedback from colleagues and reflect on how others solve problems similar that people may encounter. In this blog post contains review of another classmate’s R package that they made for the previous assessment. The review provided useful feedback to author and highlight aspects of their package that I liked and that I think could be improved upon.
+author:
+  - name: Putu Wahyu Saputra 
+    email: psap0002@student.monash.edu
+date: 10-26-2020
+output:
+  distill::distill_article:
+    self_contained: false
+bibliography: references.bib
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.pos = "center", options(scipen=999))
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+library(htmltools)
+library(plotly)
+```
+
+
+# Package Review
+
+On this occasion, I will review an R package `covidExplorer` @covidexplorer made by Pete Stylianos. Package contains a Shiny app with summaries, analytics and news related to COVID-19 in various countries. The exciting part that this package provides is it also enables the user to scrape data from Twitter. Several steps must be done to use the feature, such as registering the API and accessing our Twitter token.
+
+### What did I think this package would do? Did they do it?
+
+In my opinion, this package will provide users with information about the development of Covid-19 cases both from confirmed cases, the number of deaths, and recovery in a straightforward and easy to use manner. In fulfilling the primary goal of a shiny application for covid-19, this package has met my expectations, even exceeded them. The graphics are presented in a user-friendly manner, not many interactive features, only by selecting country the user will be presented with two pictures for all cases and death rate. Apart from that, separating topics using tabs helps make the app look tidy. The package also provides clear instructions for users who wish to install via vignette and README. package can launch shiny apps using a short code `launch_app`. Besides, by using shinyapps.io to post a shiny app on the web, users don't have to bother installing it on their device.
+
+### Are the improvements that could be made to the code? Are there improvements that could be made to the shiny app inside the package? Is the documentation sufficient to get started? 
+
+Some improvements that I can suggest are the use of a choropleth map which makes the geographic boundaries of an area not visible if the site has a similar range of covid cases. The maps are greatly assisted by the existence of a circle marker that shows the value when hovering the mouse. The maps will look nicer if you add a thicker border at the borders of the country. Besides, another alternative that might be used is to use a cartogram map.
+Also, adding themes and aesthetics with loops can be refactored into functions to make code neater.
+The addition of the News scrapping feature from Twitter is quite good; the registration process is also explained in detail by the author. However, it would be fascinating if the user could directly input the API and Token in the shiny application directly to improve the user experience.
+The documentation for functions is excellent and straightforward for users who want to use this package. All functions are available in the R help tab when I run `?Functionname` and have a clear description of the function, arguments and usage.
+
+
+### Wrapping up!
+
+This package offers convenience for users with clear documentation, easy use, and other exciting features of the shiny app. In reviewing a package, I realized how vital a documentation function is exportable. Without clear documentation, users will be confused about using package. Convenience for the user is something that needs to be considered. Besides, the structure of writing package is also very crucial. For me, who is just learning to understand the form of a package, neat file placement is beneficial for exploring the code in each section. When I find a deficiency, as a reviewer, I can report or suggest a chance of improvement. With a review for a package, the author can also make the package better with suggestions from reviewers.
+
+---
+
+# Appendix
+
+- **The author of this package is a classmate in the ETC5523 Communicating with Data at Monash University**
+- [x] As the reviewer I confirm that there are no [conflicts of interest](https://devguide.ropensci.org/policies.html#coi) for me to review this work.
+
+#### Documentation
+
+The package includes all the following forms of documentation:
+
+- [x] **A statement of need** clearly stating problems the software is designed to solve and its target audience in README
+- [x] **Installation instructions:** for the development version of package and any non-standard dependencies in README
+- [x] **Vignette(s)** demonstrating major functionality that runs successfully locally
+- [x] **Function Documentation:** for all exported functions in R help
+- [x] **Examples** for all exported functions in R Help that run successfully locally
+- [x] **Community guidelines** including contribution guidelines in the README or CONTRIBUTING, and DESCRIPTION with `URL`, `BugReports` and `Maintainer` (which may be autogenerated via `Authors@R`).
+
+
+#### Functionality
+
+- [x] **Installation:** Installation succeeds as documented.
+- [x] **Functionality:** Any functional claims of the software been confirmed.
+- [x] **Performance:** Any performance claims of the software been confirmed.
+- [x] **Automated tests:** Unit tests cover essential functions of the package
+   and a reasonable range of inputs and conditions. All tests pass on the local machine.
+- [x] **Packaging guidelines**: The package conforms to the rOpenSci packaging guidelines
+
+Estimated hours spent reviewing:
+
+- [x] Should the author(s) deem it appropriate, I agree to be acknowledged as a package reviewer ("rev" role) in the package DESCRIPTION file.
+
+---
+
+### Review Comments 
+
+Package is straightforward, complete documentation, and easy to use.
+
+
+# Acknowledgements
+
+This blog post constructed by R functions from packages as following:
+
+- distill @distill
+- tidyverse @tidyverse2
+- ggplot2 @ggplot2
+- lubridate @lubridate
+- htmltools @htmltools
+- plotly @plotly

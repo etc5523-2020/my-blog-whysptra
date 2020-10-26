@@ -1,5 +1,21 @@
 [
   {
+    "path": "posts/post4/",
+    "title": "Let's review an R package",
+    "description": "Peer review is a useful tool to both receive feedback from colleagues and reflect on how others solve problems similar that people may encounter. In this blog post contains review of another classmate’s R package that they made for the previous assessment. The review provided useful feedback to author and highlight aspects of their package that I liked and that I think could be improved upon.",
+    "author": [
+      {
+        "name": "Putu Wahyu Saputra",
+        "url": {}
+      }
+    ],
+    "date": "2020-10-26",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2020-10-26T21:28:28+08:00",
+    "input_file": "post4.utf8.md"
+  },
+  {
     "path": "posts/post3/",
     "title": "COVID-19 Shiny Application",
     "description": "App review and points of improvement or additions that plausible.",
